@@ -1,0 +1,5 @@
+#!/bin/sh
+../md2html.py index.md usage.md install.md
+../md2html.py install.md index.md usage.md
+../md2html.py usage.md install.md index.md
+

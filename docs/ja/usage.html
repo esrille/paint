@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang='ja'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, user-scalable=yes'>
+<title>つかいかた ― ペイント</title>
+<link href='../icon.png' rel='icon'>
+<link rel='stylesheet' type='text/css' href='default.css'>
+<meta content='つかいかた' name='description'>
+<meta content='https://esrille.github.io/paint/usage.html' property='og:url'>
+<meta content='つかいかた ― ペイント' property='og:title'>
+<meta content='つかいかた' property='og:description'>
+<meta content='https://esrille.github.io/ibus-hiragana/screenshot.png' property='og:image'>
+<meta content='product' property='og:type'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='@esrille' name='twitter:creator'>
+<style>
+aside a:hover {
+  text-decoration: none;
+}
+.title {
+  font-size: 20pt;
+}
+</style>
+</head>
+<body>
+<div id='sidebar'>
+<aside>
+<a class='title' href='https://github.com/esrille/paint'><img alt="アイコン" src="../icon.png"><br>
+ペイント</a>
+<hr>
+<ul>
+<li><a href='index.html'>はじめに</a>
+<li><a href='install.html'>インストール<ruby>方法<rp>(</rp><rt>ほうほう</rt><rp>)</rp></ruby></a>
+<li><a href='usage.html'>つかいかた</a>
+</ul>
+<a href='../en/index.html'>English</a>
+<footer>
+</footer>
+</aside>
+</div>
+<main>
+<h1>つかいかた</h1>
+<style>
+thead tr th:first-child, tbody tr td:first-child {
+  min-width: 30%;
+}
+</style>
+
+<h2>はじめかた</h2>
+<p>&#x3000;プログラムのファイル名は"esrille-paint"です。</p>
+<p>&#x3000;グラフィックス アプリケーションの<ruby>一覧<rp>(</rp><rt>いちらん</rt><rp>)</rp></ruby>から[ペイント]を<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>します。そうすると、したのような「ペイント」ウィンドウがひらきます。</p>
+<p><img alt="&lt;ruby&gt;画面&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;がめん&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;レイアウト" src="layout.png"></p>
+<p>&#x3000;しろい<ruby>用紙<rp>(</rp><rt>ようし</rt><rp>)</rp></ruby>の<ruby>部分<rp>(</rp><rt>ぶぶん</rt><rp>)</rp></ruby>にマウスカーソルをうごかすと、カーソルが<ruby>鉛筆<rp>(</rp><rt>えんぴつ</rt><rp>)</rp></ruby>のかたちにかわります。そのままドラッグすると<ruby>絵<rp>(</rp><rt>え</rt><rp>)</rp></ruby>をかくことができます。[カラーボタン]をつかうと、<ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>をかえられます。[ツールボタン]をつかうと、<ruby>道具<rp>(</rp><rt>どうぐ</rt><rp>)</rp></ruby>をかえられます。それぞれの<ruby>道具<rp>(</rp><rt>どうぐ</rt><rp>)</rp></ruby>については、このあとで<ruby>説明<rp>(</rp><rt>せつめい</rt><rp>)</rp></ruby>していきます。</p>
+<p>&#x3000;コマンドラインから「ペイント」をはじめたいときは、つぎのようにタイプします。</p>
+<pre><code>$ esrille-paint [ファイル名]...
+</code></pre>
+
+<p>&#x3000;ファイル<ruby>名<rp>(</rp><rt>めい</rt><rp>)</rp></ruby>の<ruby>部分<rp>(</rp><rt>ぶぶん</rt><rp>)</rp></ruby>には、ひらきたいファイルのなまえをタイプします。あたらしいファイルをつくるときは、ファイル<ruby>名<rp>(</rp><rt>めい</rt><rp>)</rp></ruby>は<ruby>指定<rp>(</rp><rt>してい</rt><rp>)</rp></ruby>しなくてもかまいません。</p>
+<h2><ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby></h2>
+<p>&#x3000;色をかえたいときは、[カラー]ボタンをおします。そうすると、したのような[<ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>の<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>]ダイアログボックスがひらきます。</p>
+<p><img alt="&lt;ruby&gt;色&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;いろ&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;の&lt;ruby&gt;選択&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;せんたく&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;" src="color.png"></p>
+<p>&#x3000;つかいたい<ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>をクリックしてから、[<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>]ボタンをおして<ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>をかえます。[<ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>の<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>]ダイアログボックスの[+]ボタンをおすと、じぶんで<ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>をつくることができます。</p>
+<h2>ツール</h2>
+<p>&#x3000;<ruby>道具<rp>(</rp><rt>どうぐ</rt><rp>)</rp></ruby>をかえたいときは、[ツール]ボタンをおします。そうすると、したのような[ツール]ダイアログボックスがひらきます。</p>
+<p><img alt="ツール" src="tool.png"></p>
+<p>&#x3000;つかいたい<ruby>道具<rp>(</rp><rt>どうぐ</rt><rp>)</rp></ruby>をクリックすると<ruby>道具<rp>(</rp><rt>どうぐ</rt><rp>)</rp></ruby>がかわります。</p>
+<p>&#x3000;よくつかうツールは、キーボードで<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>することもできます。したの<ruby>表<rp>(</rp><rt>ひょう</rt><rp>)</rp></ruby>の<ruby>道具<rp>(</rp><rt>どうぐ</rt><rp>)</rp></ruby>の<ruby>列<rp>(</rp><rt>れつ</rt><rp>)</rp></ruby>にかかれているキーをおすと、そのツールを<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>できます。</p>
+<table>
+<thead>
+<tr>
+<th><ruby>道具<rp>(</rp><rt>どうぐ</rt><rp>)</rp></ruby></th>
+<th><ruby>説明<rp>(</rp><rt>せつめい</rt><rp>)</rp></ruby></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="&lt;ruby&gt;投&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;な&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;げなわ" src="../figures/lasso-symbolic.svg"> <ruby>投<rp>(</rp><rt>な</rt><rp>)</rp></ruby>げなわ</td>
+<td>&#x3000;<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>のいちぶをじゆうな<ruby>形<rp>(</rp><rt>かたち</rt><rp>)</rp></ruby>で<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>して、<ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>・<ruby>拡大<rp>(</rp><rt>かくだい</rt><rp>)</rp></ruby>・<ruby>縮小<rp>(</rp><rt>しゅくしょう</rt><rp>)</rp></ruby>することができます。<br>&#x3000;まず、ドラッグして、じゆうに<ruby>範囲<rp>(</rp><rt>はんい</rt><rp>)</rp></ruby>を<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>します。つぎに<ruby>点線<rp>(</rp><rt>てんせん</rt><rp>)</rp></ruby>でかこまれた<ruby>領域<rp>(</rp><rt>りょういき</rt><rp>)</rp></ruby>のなかにマウスカーソルを<ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>してドラッグします。<br>• [Shift]キーをおしながらドラッグすると、<ruby>形<rp>(</rp><rt>かたち</rt><rp>)</rp></ruby>をかえずに、うごかす<ruby>方向<rp>(</rp><rt>ほうこう</rt><rp>)</rp></ruby>を<ruby>制限<rp>(</rp><rt>せいげん</rt><rp>)</rp></ruby>できます。br&gt;• [Escape]キーをおすと、いまの<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>をおわらせられます。</td>
+</tr>
+<tr>
+<td><img alt="&lt;ruby&gt;選択&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;せんたく&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;" src="../figures/selection-symbolic.svg"> <ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby><br><b>[S]</b></td>
+<td>&#x3000;<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>のいちぶを<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>して<ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>したり、<ruby>拡大<rp>(</rp><rt>かくだい</rt><rp>)</rp></ruby>・<ruby>縮小<rp>(</rp><rt>しゅくしょう</rt><rp>)</rp></ruby>したりすることができます。<br>&#x3000;まず、ドラッグして、<ruby>四角<rp>(</rp><rt>しかく</rt><rp>)</rp></ruby>い<ruby>領域<rp>(</rp><rt>りょういき</rt><rp>)</rp></ruby>を<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>します。つぎに<ruby>点線<rp>(</rp><rt>てんせん</rt><rp>)</rp></ruby>でかこまれた<ruby>領域<rp>(</rp><rt>りょういき</rt><rp>)</rp></ruby>のなかにマウスカーソルを<ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>してドラッグします。<br>• [Shift]キーをおしながらドラッグすると、<ruby>形<rp>(</rp><rt>かたち</rt><rp>)</rp></ruby>をかえずに、うごかす<ruby>方向<rp>(</rp><rt>ほうこう</rt><rp>)</rp></ruby>を<ruby>制限<rp>(</rp><rt>せいげん</rt><rp>)</rp></ruby>できます。<br>• [Escape]キーをおすと、いまの<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>をおわらせられます。<br>• <b>[Ctrl]+[A]</b>をおすと、<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby><ruby>全体<rp>(</rp><rt>ぜんたい</rt><rp>)</rp></ruby>を<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>できます。</td>
+</tr>
+<tr>
+<td><img alt="ペンシル" src="../figures/pencil-symbolic.svg"> ペンシル<br><b>[P]</b></td>
+<td>&#x3000;ドラッグした<ruby>軌跡<rp>(</rp><rt>きせき</rt><rp>)</rp></ruby>にそって、じゆうに<ruby>線<rp>(</rp><rt>せん</rt><rp>)</rp></ruby>をひきます。</td>
+</tr>
+<tr>
+<td><img alt="&lt;ruby&gt;消&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;け&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;しゴム" src="../figures/eraser-symbolic.svg"> <ruby>消<rp>(</rp><rt>け</rt><rp>)</rp></ruby>しゴム<br><b>[E]</b></td>
+<td>&#x3000;ドラッグした<ruby>軌跡<rp>(</rp><rt>きせき</rt><rp>)</rp></ruby>にそって<ruby>消<rp>(</rp><rt>け</rt><rp>)</rp></ruby>します。</td>
+</tr>
+<tr>
+<td><img alt="&lt;ruby&gt;直線&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;ちょくせん&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;" src="../figures/line-symbolic.svg"> <ruby>直線<rp>(</rp><rt>ちょくせん</rt><rp>)</rp></ruby></td>
+<td>&#x3000;ドラッグして<ruby>直線<rp>(</rp><rt>ちょくせん</rt><rp>)</rp></ruby>をひきます。<ruby>直線<rp>(</rp><rt>ちょくせん</rt><rp>)</rp></ruby>のかたちは、ドラッグをやめたときのかたちになります。<br>• [Shift]キーをおさえながらドラッグすると、うごかす<ruby>方向<rp>(</rp><rt>ほうこう</rt><rp>)</rp></ruby>を<ruby>制限<rp>(</rp><rt>せいげん</rt><rp>)</rp></ruby>できます。</td>
+</tr>
+<tr>
+<td><img alt="&lt;ruby&gt;四角形&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;しかくけい&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;" src="../figures/rectangle-symbolic.svg"> <ruby>四角形<rp>(</rp><rt>しかくけい</rt><rp>)</rp></ruby></td>
+<td>&#x3000;ドラッグして<ruby>四角形<rp>(</rp><rt>しかくけい</rt><rp>)</rp></ruby>をかきます。<ruby>四角形<rp>(</rp><rt>しかくけい</rt><rp>)</rp></ruby>のおおきさは、ドラッグをやめたときのおおきさになります。<br>• [Shift]キーをおさえながらドラッグすると、<ruby>正方形<rp>(</rp><rt>せいほうけい</rt><rp>)</rp></ruby>をかけます。</td>
+</tr>
+<tr>
+<td><img alt="&lt;ruby&gt;楕円&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;だえん&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;ruby&gt;形&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;けい&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;" src="../figures/oval-symbolic.svg"> <ruby>楕円<rp>(</rp><rt>だえん</rt><rp>)</rp></ruby><ruby>形<rp>(</rp><rt>けい</rt><rp>)</rp></ruby></td>
+<td>&#x3000;ドラッグして<ruby>楕円<rp>(</rp><rt>だえん</rt><rp>)</rp></ruby>をかきます。<ruby>楕円<rp>(</rp><rt>だえん</rt><rp>)</rp></ruby>のおおきさは、ドラッグをやめたときのおおきさになります。<br>• [Shift]キーをおさえながらドラッグすると、<ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby>をかけます。</td>
+</tr>
+<tr>
+<td><img alt="テキスト" src="../figures/text-symbolic.svg"> テキスト<br><b>[T]</b></td>
+<td>&#x3000;テキストをタイプします。<br>&#x3000;まず、テキストをタイプしたい<ruby>位置<rp>(</rp><rt>いち</rt><rp>)</rp></ruby>をクリックします。つぎにキーボードで<ruby>文字<rp>(</rp><rt>もじ</rt><rp>)</rp></ruby>を<ruby>入力<rp>(</rp><rt>にゅうりょく</rt><rp>)</rp></ruby>します。<br>&#x3000;テキストを<ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>、<ruby>拡大<rp>(</rp><rt>かくだい</rt><rp>)</rp></ruby>、<ruby>縮小<rp>(</rp><rt>しゅくしょう</rt><rp>)</rp></ruby>することもできます。<ruby>入力<rp>(</rp><rt>にゅうりょく</rt><rp>)</rp></ruby>したテキストの<ruby>部分<rp>(</rp><rt>ぶぶん</rt><rp>)</rp></ruby>にマウスカーソルを<ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>してドラッグします。<br>• [Shift]キーをおしながらドラッグすると、テキストの<ruby>形<rp>(</rp><rt>かたち</rt><rp>)</rp></ruby>をかえずに、うごかす<ruby>方向<rp>(</rp><rt>ほうこう</rt><rp>)</rp></ruby>を<ruby>制限<rp>(</rp><rt>せいげん</rt><rp>)</rp></ruby>できます。<br>• [Escape]キーをおすと、いまの<ruby>入力<rp>(</rp><rt>にゅうりょく</rt><rp>)</rp></ruby>をおわらせられます。</td>
+</tr>
+</tbody>
+</table>
+<h2>スタイル</h2>
+<p>&#x3000;<ruby>線<rp>(</rp><rt>せん</rt><rp>)</rp></ruby>のふとさをかえたいときは、[スタイル]ボタンをおします。そうすると、したのような[スタイル]ダイアログボックスがひらきます。</p>
+<p><img alt="スタイル" src="style.png"></p>
+<p>&#x3000;つかいたいスタイルをクリックすると<ruby>線<rp>(</rp><rt>せん</rt><rp>)</rp></ruby>のふとさがかわります。</p>
+<table>
+<thead>
+<tr>
+<th>スタイル</th>
+<th><ruby>説明<rp>(</rp><rt>せつめい</rt><rp>)</rp></ruby></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="1px" src="../figures/1px-symbolic.svg">&#x3000;</td>
+<td><ruby>幅<rp>(</rp><rt>はば</rt><rp>)</rp></ruby>1ピクセル</td>
+</tr>
+<tr>
+<td><img alt="2px" src="../figures/2px-symbolic.svg">&#x3000;</td>
+<td><ruby>幅<rp>(</rp><rt>はば</rt><rp>)</rp></ruby>2ピクセル</td>
+</tr>
+<tr>
+<td><img alt="4px" src="../figures/4px-symbolic.svg">&#x3000;</td>
+<td><ruby>幅<rp>(</rp><rt>はば</rt><rp>)</rp></ruby>4ピクセル</td>
+</tr>
+<tr>
+<td><img alt="8px" src="../figures/8px-symbolic.svg">&#x3000;</td>
+<td><ruby>幅<rp>(</rp><rt>はば</rt><rp>)</rp></ruby>8ピクセル</td>
+</tr>
+</tbody>
+</table>
+<h2><ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>の<ruby>編集<rp>(</rp><rt>へんしゅう</rt><rp>)</rp></ruby></h2>
+<p>&#x3000;<ruby>編集<rp>(</rp><rt>へんしゅう</rt><rp>)</rp></ruby><ruby>用<rp>(</rp><rt>よう</rt><rp>)</rp></ruby>のボタンをつかうと、きりとったり、はりつけたりといった<ruby>編集<rp>(</rp><rt>へんしゅう</rt><rp>)</rp></ruby>をすることができます。</p>
+<table>
+<thead>
+<tr>
+<th>ボタン</th>
+<th><ruby>内容<rp>(</rp><rt>ないよう</rt><rp>)</rp></ruby></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>もとにもどす<br><b>[Ctrl]+[Z]</b></td>
+<td>まえの<ruby>操作<rp>(</rp><rt>そうさ</rt><rp>)</rp></ruby>をとりけして、もとにもどします。</td>
+</tr>
+<tr>
+<td>やりなおし<br><b>[Ctrl]+[Shift]+[Z]</b></td>
+<td>もとにもどした<ruby>操作<rp>(</rp><rt>そうさ</rt><rp>)</rp></ruby>をやりなおします。</td>
+</tr>
+<tr>
+<td>きりとり<br><b>[Ctrl]+[X]</b></td>
+<td><ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>している<ruby>範囲<rp>(</rp><rt>はんい</rt><rp>)</rp></ruby>をきりとって、クリップボードにいれます。</td>
+</tr>
+<tr>
+<td>コピー<br><b>[Ctrl]+[C]</b></td>
+<td><ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>している<ruby>範囲<rp>(</rp><rt>はんい</rt><rp>)</rp></ruby>をコピーして、クリップボードにいれます。</td>
+</tr>
+<tr>
+<td>はりつけ<br><b>[Ctrl]+[V]</b></td>
+<td>クリップボードのなかの<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>やテキストを<ruby>編集<rp>(</rp><rt>へんしゅう</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>の<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>に、はりつけます。はりつけた<ruby>内容<rp>(</rp><rt>ないよう</rt><rp>)</rp></ruby>は、ドラッグして、<ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>・<ruby>拡大<rp>(</rp><rt>かくだい</rt><rp>)</rp></ruby>・<ruby>縮小<rp>(</rp><rt>しゅくしょう</rt><rp>)</rp></ruby>することができます。<br>• [Shift]キーをおしながらドラッグすると、<ruby>形<rp>(</rp><rt>かたち</rt><rp>)</rp></ruby>をかえずに、うごかす<ruby>方向<rp>(</rp><rt>ほうこう</rt><rp>)</rp></ruby>を<ruby>制限<rp>(</rp><rt>せいげん</rt><rp>)</rp></ruby>できます。</td>
+</tr>
+</tbody>
+</table>
+<h2><ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby></h2>
+<p>&#x3000;つくった<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>は、ファイルに<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>しておかないと、なくなってしまいます。<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>を<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>するには、「ペイント」ウィンドウの[<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>]ボタンをクリックします。あたらしい<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>を<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>するときは、ダイアログボックスにファイル<ruby>名<rp>(</rp><rt>めい</rt><rp>)</rp></ruby>を<ruby>入力<rp>(</rp><rt>にゅうりょく</rt><rp>)</rp></ruby>して[<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>]ボタンをおします。</p>
+<p>&#x3000;<b>[Ctrl]+[S]</b>をおして<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>を<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>することもできます。（Sは<ruby>英語<rp>(</rp><rt>えいご</rt><rp>)</rp></ruby>の"<ruby>Save<rp>(</rp><rt>セーブ</rt><rp>)</rp></ruby>"の<ruby>頭<rp>(</rp><rt>かしら</rt><rp>)</rp></ruby><ruby>文字<rp>(</rp><rt>もじ</rt><rp>)</rp></ruby>からきています。）</p>
+<h2>プライマリー メニュー</h2>
+<p>&#x3000;「ペイント」ウィンドウの[プライマリー メニュー]ボタンをおすと、メニューがひらきます。プライマリー メニューには、つぎのようなメニュー<ruby>項目<rp>(</rp><rt>こうもく</rt><rp>)</rp></ruby>があります。</p>
+<table>
+<thead>
+<tr>
+<th>メニュー<ruby>項目<rp>(</rp><rt>こうもく</rt><rp>)</rp></ruby></th>
+<th><ruby>内容<rp>(</rp><rt>ないよう</rt><rp>)</rp></ruby></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ruby>新<rp>(</rp><rt>あたら</rt><rp>)</rp></ruby>しい<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>...<br><b>[Ctrl]+[N]</b></td>
+<td>&#x3000;あたらしい<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>の<ruby>幅<rp>(</rp><rt>はば</rt><rp>)</rp></ruby>とたかさを<ruby>入力<rp>(</rp><rt>にゅうりょく</rt><rp>)</rp></ruby>して[OK]をおすと、あたらしい「ペイント」ウィンドウがひらきます。</td>
+</tr>
+<tr>
+<td><ruby>開<rp>(</rp><rt>ひら</rt><rp>)</rp></ruby>く...<br><b>[Ctrl]+[O]</b></td>
+<td>&#x3000;ひらきたい<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>ファイルを<ruby>選択<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby>して[OK]をおすと、あたらしい「ペイント」ウィンドウがひらきます。</td>
+</tr>
+<tr>
+<td><ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby><br><b>[Ctrl]+[S]</b></td>
+<td>&#x3000;<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>をファイルに<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>します。<br>&#x3000;あたらしい<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>を<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>するときは、ダイアログボックスにファイル<ruby>名<rp>(</rp><rt>めい</rt><rp>)</rp></ruby>を<ruby>入力<rp>(</rp><rt>にゅうりょく</rt><rp>)</rp></ruby>して、[<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>]ボタンをおします。</td>
+</tr>
+<tr>
+<td><ruby>名前<rp>(</rp><rt>なまえ</rt><rp>)</rp></ruby>をつけて<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>...</td>
+<td>&#x3000;<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>をべつのファイルに<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>します。<br>&#x3000;ダイアログボックスにべつのファイル<ruby>名<rp>(</rp><rt>めい</rt><rp>)</rp></ruby>を<ruby>入力<rp>(</rp><rt>にゅうりょく</rt><rp>)</rp></ruby>して、[<ruby>保存<rp>(</rp><rt>ほぞん</rt><rp>)</rp></ruby>]ボタンをおします。</td>
+</tr>
+<tr>
+<td>フォント...</td>
+<td>&#x3000;テキストツールでつかうフォントとフォントのおおきさをえらびます。</td>
+</tr>
+<tr>
+<td>ヘルプ</td>
+<td>&#x3000;ウェブブラウザーに「ペイント」の<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>びきのページを<ruby>表示<rp>(</rp><rt>ひょうじ</rt><rp>)</rp></ruby>します。</td>
+</tr>
+<tr>
+<td>ペイントについて</td>
+<td>&#x3000;ダイアログボックスをひらいて、「ペイント」のバージョン<ruby>情報<rp>(</rp><rt>じょうほう</rt><rp>)</rp></ruby>などを<ruby>表示<rp>(</rp><rt>ひょうじ</rt><rp>)</rp></ruby>します。</td>
+</tr>
+</tbody>
+</table>
+<h2><ruby>注意<rp>(</rp><rt>ちゅうい</rt><rp>)</rp></ruby></h2>
+<p>&#x3000;「ペイント」バージョン0.1.0で<ruby>対応<rp>(</rp><rt>たいおう</rt><rp>)</rp></ruby>している<ruby>画像<rp>(</rp><rt>がぞう</rt><rp>)</rp></ruby>ファイルの<ruby>形式<rp>(</rp><rt>けいしき</rt><rp>)</rp></ruby>は、「PNG」だけです。そのほかの<ruby>形式<rp>(</rp><rt>けいしき</rt><rp>)</rp></ruby>は<ruby>将来<rp>(</rp><rt>しょうらい</rt><rp>)</rp></ruby>のバージョンでサポートする<ruby>予定<rp>(</rp><rt>よてい</rt><rp>)</rp></ruby>です。</p>
+</main>
+<nav>
+<a href='install.html' id='nav-prev'><div>&lt;</div></a>
+<a href='index.html' id='nav-next'><div>&gt;</div></a>
+</nav>
+</body>
+</html>

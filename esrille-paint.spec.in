@@ -1,0 +1,49 @@
+Name:       @PACKAGE_NAME@
+Version:    @PACKAGE_VERSION@
+Release:    1%{?dist}
+Summary:    A GTK 3 application for drawing bitmap images
+License:    ASL 2.0
+URL:        https://github.com/esrille/%{name}
+Source0:    https://github.com/esrille/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Requires:   gobject-introspection
+Requires:   google-noto-sans-cjk-ttc-fonts
+Requires:   gtk3
+Requires:   python3
+Requires:   python3-dbus
+Requires:   python3-pyxdg
+BuildRequires: gettext-devel
+BuildRequires: libtool
+BuildRequires: pkgconfig
+BuildRequires: python3-devel
+BuildArch:     noarch
+
+%description
+"Paint" from Esrille is a GTK 3 application for drawing bitmap images.
+
+%global __python %{__python3}
+
+%prep
+%setup -q
+
+%build
+%configure --disable-static
+make %{?_smp_mflags}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=${RPM_BUILD_ROOT} install
+%find_lang %{name}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files -f %{name}.lang
+%defattr(-,root,root,-)
+%doc README.md CONTRIBUTING.md
+%license LICENSE NOTICE
+%{_bindir}/%{name}
+%{_datadir}/%{name}
+%{_datadir}/applications
+%{_datadir}/icons
+
+%changelog

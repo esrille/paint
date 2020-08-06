@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, user-scalable=yes'>
+<title>Using Paint ― Paint</title>
+<link href='../icon.png' rel='icon'>
+<link rel='stylesheet' type='text/css' href='default.css'>
+<meta content='Using Paint' name='description'>
+<meta content='https://esrille.github.io/paint/usage.html' property='og:url'>
+<meta content='Using Paint ― Paint' property='og:title'>
+<meta content='Using Paint' property='og:description'>
+<meta content='https://esrille.github.io/ibus-hiragana/screenshot.png' property='og:image'>
+<meta content='product' property='og:type'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='@esrille' name='twitter:creator'>
+<style>
+aside a:hover {
+  text-decoration: none;
+}
+.title {
+  font-size: 20pt;
+}
+</style>
+</head>
+<body>
+<div id='sidebar'>
+<aside>
+<a class='title' href='https://github.com/esrille/paint'><img alt="icon" src="../icon.png"><br>
+Paint</a>
+<hr>
+<ul>
+<li><a href='index.html'>Introduction</a>
+<li><a href='install.html'>Installing Paint</a>
+<li><a href='usage.html'>Using Paint</a>
+</ul>
+<a href='../ja/index.html'>日本語</a>
+<footer>
+</footer>
+</aside>
+</div>
+<main>
+<h1>Using Paint</h1>
+<style>
+thead tr th:first-child, tbody tr td:first-child {
+  min-width: 30%;
+}
+</style>
+
+<h2>Starting "Paint"</h2>
+<p>The program filename is "esrille-paint".</p>
+<p>Select "Paint" from the graphics application list.
+A "Paint" window like below will open:</p>
+<p><img alt="The main screen layout" src="layout.png"></p>
+<p>When you move the mouse cursor to the drawing canvas, the mouse cursor becomes a pencil.
+You can draw a curved line as you drag in the canvas.
+You can choose a color with the [Color] button.
+You can choose a tool with the [Tool] button.
+We will describe each tool in the next sections.</p>
+<p>To run "Paint" from the command line, type as follow:</p>
+<pre><code>$ esrille-paint [filename]...
+</code></pre>
+
+<p>In the filename part, type the name of the file you want to open.
+When creating a new file, you do not have to specify the filename.</p>
+<h2>Colors</h2>
+<p>You can choose a color with the [Color] button.
+A "Pick a Color" dialog like below will open:</p>
+<p><img alt="Pick a Color" src="color.png"></p>
+<p>Click any color to make it the current color, and click [Select] to change the color.
+To create your own custom color, click [+] button in the [Pick a Color] dialog.</p>
+<h2>Tools</h2>
+<p>You can choose a tool with the [Tool] button.
+A "Tool" dialog like below will open:</p>
+<p><img alt="Tool" src="tool.png"></p>
+<p>Click any tool to make it the current tool.</p>
+<p>Frequently used tools can be selected using keyboard;
+you can choose a tool simply typing the key listed in the first column in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Lasso" src="../figures/lasso-symbolic.svg"> Lasso</td>
+<td>Create a non-rectangular selection to move, stretch or shrink.<br>Drag in the canvas to select a non-rectangular area. Then position the mouse cursor inside the area surrounded by a dotted outline and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of your selection.<br>• Use the [Escape] key to complete the current selection.</td>
+</tr>
+<tr>
+<td><img alt="Select" src="../figures/selection-symbolic.svg"> Select<br><b>[S]</b></td>
+<td>Create a rectangular selection to move, stretch or shrink. Drag in the canvas to select a rectangular area. Then position the mouse cursor inside the area surrounded by a dotted outline and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of your selection.<br>• Use the [Escape] key to complete the current selection.<br>• Use <b>[Ctrl]+[A]</b> to select the entire drawing canvas.</td>
+</tr>
+<tr>
+<td><img alt="Pencil" src="../figures/pencil-symbolic.svg"> Pencil<br><b>[P]</b></td>
+<td>Draw a curved line where you drag.</td>
+</tr>
+<tr>
+<td><img alt="Eraser" src="../figures/eraser-symbolic.svg"> Eraser<br><b>[E]</b></td>
+<td>Erase where you drag.</td>
+</tr>
+<tr>
+<td><img alt="Line" src="../figures/line-symbolic.svg"> Line</td>
+<td>Draw a straight line as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to constrain drawing.</td>
+</tr>
+<tr>
+<td><img alt="Rectangle" src="../figures/rectangle-symbolic.svg"> Rectangle</td>
+<td>Draw a rectangle as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to draw squares.</td>
+</tr>
+<tr>
+<td><img alt="Oval" src="../figures/oval-symbolic.svg"> Oval</td>
+<td>Draw an oval as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to draw circles.</td>
+</tr>
+<tr>
+<td><img alt="Text" src="../figures/text-symbolic.svg"> Text<br><b>[T]</b></td>
+<td>Type text.<br>Click where you want to add text. Then type your text.<br>You can move, stretch or shrink the text; position the mouse cursor around the text and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of the text.<br>• Use the [Escape] key to finish typing.</td>
+</tr>
+</tbody>
+</table>
+<h2>Style</h2>
+<p>You can choose a line width with the [Style] button.
+A "Style" dialog like below will open:</p>
+<p><img alt="Style" src="style.png"></p>
+<p>Click any style to make it the current line width.</p>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="1px" src="../figures/1px-symbolic.svg"> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>1 px</td>
+</tr>
+<tr>
+<td><img alt="2px" src="../figures/2px-symbolic.svg"></td>
+<td>2 px</td>
+</tr>
+<tr>
+<td><img alt="4px" src="../figures/4px-symbolic.svg"></td>
+<td>4 px</td>
+</tr>
+<tr>
+<td><img alt="8px" src="../figures/8px-symbolic.svg"></td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<h2>Editing</h2>
+<p>You can use edit buttons to perform image editing tasks, such as Cut and Paste.</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Undo<br><b>[Ctrl]+[Z]</b></td>
+<td>Undo the last action.</td>
+</tr>
+<tr>
+<td>Redo<br><b>[Ctrl]+[Shift]+[Z]</b></td>
+<td>Redo the last action you undid.</td>
+</tr>
+<tr>
+<td>Cut<br><b>[Ctrl]+[X]</b></td>
+<td>Remove the selection to the Clipboard.</td>
+</tr>
+<tr>
+<td>Copy<br><b>[Ctrl]+[C]</b></td>
+<td>Copy the selection to  the Clipboard.</td>
+</tr>
+<tr>
+<td>Paste<br><b>[Ctrl]+[V]</b></td>
+<td>Paste the image or text from the Clipboard. You can move, stretch or shrink the pasted content where you drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of the pasted image or text.</td>
+</tr>
+</tbody>
+</table>
+<h2>Saving</h2>
+<p>Your changes to the image will be lost if you don't save them to a file.
+To save changes, click the [Save] button in the header bar of the "Paint" window.
+Enter a filename the first time you save a new image, then click the [Save] button in the dialog box.</p>
+<p>You can also use <b>[Ctrl]+[S]</b> to save the image.</p>
+<h2>Primary menu</h2>
+<p>You can open the primary menu with the [Primary menu] button in the header bar.
+The primary menu contains the following menu items.</p>
+<table>
+<thead>
+<tr>
+<th>Menu item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New...<br><b>[Ctrl]+[N]</b></td>
+<td>Enter the width and height of the new image, then click [OK] to open a new Paint window.</td>
+</tr>
+<tr>
+<td>Open...<br><b>[Ctrl]+[O]</b></td>
+<td>Select the image file to open, then click [Open] to open a new Paint window.</td>
+</tr>
+<tr>
+<td>Save<br><b>[Ctrl]+[S]</b></td>
+<td>Save changes.<br>Enter a filename the first time you save a new image, then click the [Save] button in the dialog box.</td>
+</tr>
+<tr>
+<td>Save As...</td>
+<td>Save a copy of the image.<br>Enter a filename for the copy, then click the [Save] button in the dialog box.</td>
+</tr>
+<tr>
+<td>Font...</td>
+<td>Change the font and font size used with the Text tool.</td>
+</tr>
+<tr>
+<td>Help</td>
+<td>Open the Paint's user guide in the default web browser.</td>
+</tr>
+<tr>
+<td>About Paint</td>
+<td>Open a dialog box that displays the Paint's version number and other information.</td>
+</tr>
+</tbody>
+</table>
+<h3>Note</h3>
+<p>The file format supported in the Paint version 0.1.0 is only PNG. The other file formats will be supported in the future versions.</p>
+</main>
+<nav>
+<a href='install.html' id='nav-prev'><div>&lt;</div></a>
+<a href='index.html' id='nav-next'><div>&gt;</div></a>
+</nav>
+</body>
+</html>

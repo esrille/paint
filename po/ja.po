@@ -1,0 +1,200 @@
+# Paint
+# Copyright (C) 2020 Esrille Inc. <info@esrille.com>
+# This file is distributed under the same license as the esrille-typing-practice package.
+# Esrille Inc. <info@esrille.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: esrille-paint 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
+"POT-Creation-Date: 2020-08-07 09:36+0900\n"
+"PO-Revision-Date: 2020-07-30 22:30+0900\n"
+"Last-Translator: Esrille Inc. <info@esrille.com>\n"
+"Language-Team: Japanese <info@esrille.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/menu.ui:6
+msgid "_New…"
+msgstr "新しい画像(_N)…"
+
+#: src/menu.ui:11
+msgid "_Open…"
+msgstr "開く(_O)…"
+
+#: src/menu.ui:18 src/window.py:149
+msgid "_Save"
+msgstr "保存(_S)"
+
+#: src/menu.ui:23
+msgid "Save _As…"
+msgstr "名前をつけて保存(_A)…"
+
+#: src/menu.ui:29
+msgid "_Font…"
+msgstr "フォント(_F)…"
+
+#: src/menu.ui:36
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: src/menu.ui:40
+msgid "_About Paint"
+msgstr "ペイントについて(_A)"
+
+#: src/new-dialog.glade:8
+msgid "Create New Window"
+msgstr "新しいウィンドウを作成"
+
+#: src/new-dialog.glade:73
+msgid "<b>Canvas Size</b>"
+msgstr "<b>画像の大きさ</b>"
+
+#: src/new-dialog.glade:104
+msgid "Width:"
+msgstr "幅:"
+
+#: src/new-dialog.glade:126
+msgid "Height:"
+msgstr "高さ:"
+
+#: src/paint.py:1067
+msgid "Noto Serif 24px"
+msgstr "Noto Serif CJK JP 24px"
+
+#: src/window.py:113
+msgid "Paint"
+msgstr "ペイント"
+
+#: src/window.py:121
+msgid "Undo"
+msgstr "元に戻す"
+
+#: src/window.py:122
+msgid "Redo"
+msgstr "やり直す"
+
+#: src/window.py:123
+msgid "Cut"
+msgstr "切り取り"
+
+#: src/window.py:124
+msgid "Copy"
+msgstr "コピー"
+
+#: src/window.py:125
+msgid "Paste"
+msgstr "貼り付け"
+
+#: src/window.py:151
+msgid "Save the current file"
+msgstr "この画像を保存します"
+
+#: src/window.py:157
+msgid "Select the current color"
+msgstr "色を選びます"
+
+#: src/window.py:167
+msgid "Select the current tool"
+msgstr "ツールを選びます"
+
+#: src/window.py:177
+msgid "Select the current line width"
+msgstr "線の幅を選びます"
+
+#: src/window.py:270
+msgid "PNG images"
+msgstr "PNG画像"
+
+#: src/window.py:275
+msgid "Any files"
+msgstr "すべてのファイル"
+
+#: src/window.py:298
+msgid "Save changes to this image?"
+msgstr "かきかえた画像を保存しますか？"
+
+#: src/window.py:299
+msgid "If you don't, changes will be lost."
+msgstr "保存しないと、変更は残りません。"
+
+#: src/window.py:300
+msgid "Close _Without Saving"
+msgstr "保存しないで閉じる(_W)"
+
+#: src/window.py:325
+msgid "Font"
+msgstr "フォント"
+
+#: src/window.py:326
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "ひさかたのひかりのどけきはるの日に しづごころなく花のちるらむ"
+
+#: src/window.py:341
+msgid "help/en/index.html"
+msgstr "help/ja/index.html"
+
+#: src/window.py:391
+msgid "Open File"
+msgstr "ファイルを開く"
+
+#: src/window.py:430
+msgid "Save File"
+msgstr "名前をつけて保存"
+
+#: src/window.py:474
+msgid "1 px"
+msgstr "1ドット"
+
+#: src/window.py:475
+msgid "2 px"
+msgstr "2ドット"
+
+#: src/window.py:476
+msgid "4 px"
+msgstr "4ドット"
+
+#: src/window.py:477
+msgid "8 px"
+msgstr "8ドット"
+
+#: src/window.py:479
+msgid "Style"
+msgstr "スタイル"
+
+#: src/window.py:494
+msgid "Select a non-rectangular area"
+msgstr "矩形以外の領域を選択します"
+
+#: src/window.py:495
+msgid "Select a rectangular area"
+msgstr "矩形の領域を選択します"
+
+#: src/window.py:496
+msgid "Draw lines"
+msgstr "線をかきます"
+
+#: src/window.py:497
+msgid "Erase where you drag"
+msgstr "ドラッグした部分を消します"
+
+#: src/window.py:498
+msgid "Draw straight lines"
+msgstr "直線をかきます"
+
+#: src/window.py:499
+msgid "Draw rectangles"
+msgstr "長方形をかきます"
+
+#: src/window.py:500
+msgid "Draw ovals"
+msgstr "楕円形をかきます"
+
+#: src/window.py:501
+msgid "Type text"
+msgstr "テキストを入力します"
+
+#: src/window.py:503
+msgid "Tool"
+msgstr "ツール"

@@ -1,0 +1,38 @@
+# Copyright (c) 2020 Esrille Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at:
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+dist_figures_DATA = \
+	1px-symbolic.svg \
+	2px-symbolic.svg \
+	4px-symbolic.svg \
+	8px-symbolic.svg \
+	eraser-symbolic.svg \
+	lasso-symbolic.svg \
+	line-symbolic.svg \
+	oval-symbolic.svg \
+	pencil-symbolic.svg \
+	rectangle-symbolic.svg \
+	selection-symbolic.svg \
+	text-symbolic.svg \
+	$(NULL)
+
+figuresdir = $(pkgdatadir)/help/figures
+
+EXTRA_DIST = \
+	Makefile.am \
+	$(NULL)
+
+uninstall-hook:
+	-rmdir $(figuresdir)
+
