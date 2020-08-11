@@ -21,6 +21,7 @@ import os
 import gi
 from gi.repository import Gio, GLib
 
+APP_PATH = '/com/esrille/esrille-paint'
 HIRAGANA_IME_KEY = 'org.freedesktop.ibus.engine.hiragana'
 
 

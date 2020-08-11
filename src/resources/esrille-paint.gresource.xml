@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/esrille/esrille-paint">
+    <file preprocess="xml-stripblanks">gtk/menu.ui</file>
+    <file preprocess="xml-stripblanks">ui/new-dialog.glade</file>
+    <file>icons/scalable/actions/1px-symbolic.svg</file>
+    <file>icons/scalable/actions/2px-symbolic.svg</file>
+    <file>icons/scalable/actions/4px-symbolic.svg</file>
+    <file>icons/scalable/actions/8px-symbolic.svg</file>
+    <file>icons/scalable/actions/eraser-symbolic.svg</file>
+    <file>icons/scalable/actions/lasso-symbolic.svg</file>
+    <file>icons/scalable/actions/line-symbolic.svg</file>
+    <file>icons/scalable/actions/oval-symbolic.svg</file>
+    <file>icons/scalable/actions/pencil-symbolic.svg</file>
+    <file>icons/scalable/actions/rectangle-symbolic.svg</file>
+    <file>icons/scalable/actions/selection-symbolic.svg</file>
+    <file>icons/scalable/actions/text-symbolic.svg</file>
+    <file>css/esrille-paint.css</file>
+  </gresource>
+</gresources>

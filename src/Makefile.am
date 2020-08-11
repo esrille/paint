@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+SUBDIRS = \
+	resources\
+	$(NULL)
+
 paint_PYTHON = \
 	application.py \
 	main.py \
@@ -20,22 +24,6 @@ paint_PYTHON = \
 	$(NULL)
 BUILT_SOURCES = package.py
 nodist_paint_PYTHON = package.py
-dist_paint_DATA = \
-	menu.ui \
-	new-dialog.glade \
-	1px-symbolic.svg \
-	2px-symbolic.svg \
-	4px-symbolic.svg \
-	8px-symbolic.svg \
-	eraser-symbolic.svg \
-	lasso-symbolic.svg \
-	line-symbolic.svg \
-	oval-symbolic.svg \
-	pencil-symbolic.svg \
-	rectangle-symbolic.svg \
-	selection-symbolic.svg \
-	text-symbolic.svg \
-	$(NULL)
 paintdir = $(pkgdatadir)/src
 
 bin_SCRIPTS = esrille-paint

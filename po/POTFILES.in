@@ -1,6 +1,6 @@
 src/application.py
 src/main.py
-src/menu.ui
-src/new-dialog.glade
+src/resources/gtk/menu.ui
+src/resources/ui/new-dialog.glade
 src/paint.py
 src/window.py

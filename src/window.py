@@ -77,8 +77,7 @@ class PalletDialog(Gtk.Dialog):
                 button.set_active(True)
             button.set_mode(False)
             button.set_size_request(48, 48)
-            path = os.path.join(os.path.dirname(__file__), icon + '-symbolic.svg')
-            image = Gtk.Image.new_from_file(path)
+            image = Gtk.Image.new_from_icon_name(icon + '-symbolic', Gtk.IconSize.BUTTON)
             button.add(image)
             context = button.get_style_context()
             context.add_class('tool_button')
@@ -141,7 +140,7 @@ class Window(Gtk.ApplicationWindow):
         menu_button.add(image)
         builder = Gtk.Builder()
         builder.set_translation_domain(package.get_name())
-        builder.add_from_file(os.path.join(os.path.dirname(__file__), 'menu.ui'))
+        builder.add_from_resource(package.APP_PATH + '/gtk/menu.ui')
         menu_button.set_menu_model(builder.get_object('app-menu'))
         menu_button.set_can_focus(False)
         self.headerbar.pack_end(menu_button)
@@ -159,9 +158,7 @@ class Window(Gtk.ApplicationWindow):
         self.headerbar.pack_end(color_button)
 
         self.tool_button = Gtk.Button.new()
-        path = os.path.join(os.path.dirname(__file__), 'pencil-symbolic.svg')
-        icon = Gio.FileIcon.new(Gio.File.new_for_path(path))
-        image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
+        image = Gtk.Image.new_from_icon_name('pencil-symbolic', Gtk.IconSize.BUTTON)
         self.tool_button.add(image)
         self.tool_button.connect("clicked", self.tool_set_callback)
         self.tool_button.set_tooltip_text(_('Select the current tool'))
@@ -169,9 +166,7 @@ class Window(Gtk.ApplicationWindow):
         self.headerbar.pack_end(self.tool_button)
 
         self.style_button = Gtk.Button.new()
-        path = os.path.join(os.path.dirname(__file__), '1px-symbolic.svg')
-        icon = Gio.FileIcon.new(Gio.File.new_for_path(path))
-        image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
+        image = Gtk.Image.new_from_icon_name('1px-symbolic-symbolic', Gtk.IconSize.BUTTON)
         self.style_button.add(image)
         self.style_button.connect("clicked", self.style_set_callback)
         self.style_button.set_tooltip_text(_('Select the current line width'))
@@ -235,9 +230,7 @@ class Window(Gtk.ApplicationWindow):
         return self.buffer
 
     def _replace_button_icon(self, button, icon):
-        path = os.path.join(os.path.dirname(__file__), icon + '-symbolic.svg')
-        icon = Gio.FileIcon.new(Gio.File.new_for_path(path))
-        image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
+        image = Gtk.Image.new_from_icon_name(icon + '-symbolic', Gtk.IconSize.BUTTON)
         button.remove(button.get_child())
         button.add(image)
         button.show_all()
@@ -344,7 +337,7 @@ class Window(Gtk.ApplicationWindow):
     def new_callback(self, *whatever):
         builder = Gtk.Builder()
         builder.set_translation_domain(package.get_name())
-        builder.add_from_file(os.path.join(os.path.dirname(__file__), 'new-dialog.glade'))
+        builder.add_from_resource(package.APP_PATH + '/ui/new-dialog.glade')
         dialog = builder.get_object('NewDialog')
         dialog.set_transient_for(self)
         dialog.set_modal(True)

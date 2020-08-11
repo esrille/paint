@@ -19,7 +19,7 @@ import package
 import gi
 gi.require_version('Gdk', '3.0')
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gdk, GLib, Gtk
+from gi.repository import Gdk, Gio, GLib, Gtk
 
 GLib.set_prgname(package.get_name())
 
@@ -28,30 +28,9 @@ from application import Application
 import gettext
 import locale
 import logging
+import os
 import signal
 import sys
-
-CSS = b"""
-.tool_button {
-    min-height: 0;
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    border:0px solid #000000;
-}
-"""
-
-
-def gtk_style():
-    style_provider = Gtk.CssProvider()
-    style_provider.load_from_data(CSS)
-    Gtk.StyleContext.add_provider_for_screen(
-        Gdk.Screen.get_default(),
-        style_provider,
-        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-    )
-
 
 if __name__ == '__main__':
     try:
@@ -60,7 +39,20 @@ if __name__ == '__main__':
         pass
     gettext.bindtextdomain(package.get_domain(), package.get_localedir())
     logging.basicConfig(level=logging.DEBUG)
-    gtk_style()
+
+    resource = Gio.Resource.load(os.path.join(os.path.dirname(__file__), 'esrille-paint.gresource'))
+    resource._register()
+
+    style_provider = Gtk.CssProvider()
+    style_provider.load_from_resource(package.APP_PATH + '/css/esrille-paint.css')
+    Gtk.StyleContext.add_provider_for_screen(
+        Gdk.Screen.get_default(),
+        style_provider,
+        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+    icon_theme = Gtk.IconTheme.get_default()
+    icon_theme.add_resource_path(package.APP_PATH + '/icons')
+
     app = Application()
     signal.signal(signal.SIGINT, signal.SIG_DFL)
     exit_status = app.run(sys.argv)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-07 09:36+0900\n"
+"POT-Creation-Date: 2020-08-12 21:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/menu.ui:6
+#: src/resources/gtk/menu.ui:6
 msgid "_New…"
 msgstr ""
 
-#: src/menu.ui:11
+#: src/resources/gtk/menu.ui:11
 msgid "_Open…"
 msgstr ""
 
-#: src/menu.ui:18 src/window.py:149
+#: src/resources/gtk/menu.ui:18 src/window.py:148
 msgid "_Save"
 msgstr ""
 
-#: src/menu.ui:23
+#: src/resources/gtk/menu.ui:23
 msgid "Save _As…"
 msgstr ""
 
-#: src/menu.ui:29
+#: src/resources/gtk/menu.ui:29
 msgid "_Font…"
 msgstr ""
 
-#: src/menu.ui:36
+#: src/resources/gtk/menu.ui:36
 msgid "_Help"
 msgstr ""
 
-#: src/menu.ui:40
+#: src/resources/gtk/menu.ui:40
 msgid "_About Paint"
 msgstr ""
 
-#: src/new-dialog.glade:8
+#: src/resources/ui/new-dialog.glade:8
 msgid "Create New Window"
 msgstr ""
 
-#: src/new-dialog.glade:73
+#: src/resources/ui/new-dialog.glade:73
 msgid "<b>Canvas Size</b>"
 msgstr ""
 
-#: src/new-dialog.glade:104
+#: src/resources/ui/new-dialog.glade:104
 msgid "Width:"
 msgstr ""
 
-#: src/new-dialog.glade:126
+#: src/resources/ui/new-dialog.glade:126
 msgid "Height:"
 msgstr ""
 
@@ -65,138 +65,138 @@ msgstr ""
 msgid "Noto Serif 24px"
 msgstr ""
 
-#: src/window.py:113
+#: src/window.py:112
 msgid "Paint"
 msgstr ""
 
-#: src/window.py:121
+#: src/window.py:120
 msgid "Undo"
 msgstr ""
 
-#: src/window.py:122
+#: src/window.py:121
 msgid "Redo"
 msgstr ""
 
-#: src/window.py:123
+#: src/window.py:122
 msgid "Cut"
 msgstr ""
 
-#: src/window.py:124
+#: src/window.py:123
 msgid "Copy"
 msgstr ""
 
-#: src/window.py:125
+#: src/window.py:124
 msgid "Paste"
 msgstr ""
 
-#: src/window.py:151
+#: src/window.py:150
 msgid "Save the current file"
 msgstr ""
 
-#: src/window.py:157
+#: src/window.py:156
 msgid "Select the current color"
 msgstr ""
 
-#: src/window.py:167
+#: src/window.py:164
 msgid "Select the current tool"
 msgstr ""
 
-#: src/window.py:177
+#: src/window.py:172
 msgid "Select the current line width"
 msgstr ""
 
-#: src/window.py:270
+#: src/window.py:263
 msgid "PNG images"
 msgstr ""
 
-#: src/window.py:275
+#: src/window.py:268
 msgid "Any files"
 msgstr ""
 
-#: src/window.py:298
+#: src/window.py:291
 msgid "Save changes to this image?"
 msgstr ""
 
-#: src/window.py:299
+#: src/window.py:292
 msgid "If you don't, changes will be lost."
 msgstr ""
 
-#: src/window.py:300
+#: src/window.py:293
 msgid "Close _Without Saving"
 msgstr ""
 
-#: src/window.py:325
+#: src/window.py:318
 msgid "Font"
 msgstr ""
 
-#: src/window.py:326
+#: src/window.py:319
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr ""
 
-#: src/window.py:341
+#: src/window.py:334
 msgid "help/en/index.html"
 msgstr ""
 
-#: src/window.py:391
+#: src/window.py:384
 msgid "Open File"
 msgstr ""
 
-#: src/window.py:430
+#: src/window.py:423
 msgid "Save File"
 msgstr ""
 
-#: src/window.py:474
+#: src/window.py:467
 msgid "1 px"
 msgstr ""
 
-#: src/window.py:475
+#: src/window.py:468
 msgid "2 px"
 msgstr ""
 
-#: src/window.py:476
+#: src/window.py:469
 msgid "4 px"
 msgstr ""
 
-#: src/window.py:477
+#: src/window.py:470
 msgid "8 px"
 msgstr ""
 
-#: src/window.py:479
+#: src/window.py:472
 msgid "Style"
 msgstr ""
 
-#: src/window.py:494
+#: src/window.py:487
 msgid "Select a non-rectangular area"
 msgstr ""
 
-#: src/window.py:495
+#: src/window.py:488
 msgid "Select a rectangular area"
 msgstr ""
 
-#: src/window.py:496
+#: src/window.py:489
 msgid "Draw lines"
 msgstr ""
 
-#: src/window.py:497
+#: src/window.py:490
 msgid "Erase where you drag"
 msgstr ""
 
-#: src/window.py:498
+#: src/window.py:491
 msgid "Draw straight lines"
 msgstr ""
 
-#: src/window.py:499
+#: src/window.py:492
 msgid "Draw rectangles"
 msgstr ""
 
-#: src/window.py:500
+#: src/window.py:493
 msgid "Draw ovals"
 msgstr ""
 
-#: src/window.py:501
+#: src/window.py:494
 msgid "Type text"
 msgstr ""
 
-#: src/window.py:503
+#: src/window.py:496
 msgid "Tool"
 msgstr ""
