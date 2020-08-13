@@ -18,7 +18,7 @@ import package
 
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gio, Gtk, Gdk, GObject
+from gi.repository import Gio, GLib, Gtk, Gdk, GObject
 
 from paint import PaintBuffer, PaintView
 
@@ -409,14 +409,25 @@ class Window(Gtk.ApplicationWindow):
         self.paintview.emit('redo')
 
     def save(self):
+        message = ''
         try:
             stream = GioStream(self.file, True)
             self.paintview.reset()
             self.buffer.write_to_png(stream)
+        except GLib.Error as e:
+            message = e.message
         except Exception as e:
-            logger.error(e)
-            self.file = None
-        return self.set_file(self.file)
+            message = str(e)
+        else:
+            return self.set_file(self.file)
+
+        dialog = Gtk.MessageDialog(
+            self, 0, Gtk.MessageType.ERROR,
+            Gtk.ButtonsType.OK, _("Failed to save image."))
+        dialog.format_secondary_text(message)
+        dialog.run()
+        dialog.destroy()
+        return True
 
     def save_as(self):
         dialog = Gtk.FileChooserDialog(
@@ -431,13 +442,18 @@ class Window(Gtk.ApplicationWindow):
                 dialog.set_file(self.file)
             except GObject.GError as e:
                 logger.error(e.message)
-        response = dialog.run()
-        if response == Gtk.ResponseType.ACCEPT:
-            self.file = dialog.get_file()
-            dialog.destroy()
-            return self.save()
+        dirty = True
+        while dirty:
+            dialog.hide()
+            dialog.show_all()
+            response = dialog.run()
+            if response == Gtk.ResponseType.ACCEPT:
+                self.file = dialog.get_file()
+                dirty = self.save()
+            else:
+                break
         dialog.destroy()
-        return True
+        return dirty
 
     def save_as_callback(self, *whatever):
         self.save_as()

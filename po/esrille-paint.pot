@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-12 21:57+0900\n"
+"POT-Creation-Date: 2020-08-14 02:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,62 +141,66 @@ msgstr ""
 msgid "Open File"
 msgstr ""
 
-#: src/window.py:423
+#: src/window.py:426
+msgid "Failed to save image."
+msgstr ""
+
+#: src/window.py:434
 msgid "Save File"
 msgstr ""
 
-#: src/window.py:467
+#: src/window.py:483
 msgid "1 px"
 msgstr ""
 
-#: src/window.py:468
+#: src/window.py:484
 msgid "2 px"
 msgstr ""
 
-#: src/window.py:469
+#: src/window.py:485
 msgid "4 px"
 msgstr ""
 
-#: src/window.py:470
+#: src/window.py:486
 msgid "8 px"
 msgstr ""
 
-#: src/window.py:472
+#: src/window.py:488
 msgid "Style"
 msgstr ""
 
-#: src/window.py:487
+#: src/window.py:503
 msgid "Select a non-rectangular area"
 msgstr ""
 
-#: src/window.py:488
+#: src/window.py:504
 msgid "Select a rectangular area"
 msgstr ""
 
-#: src/window.py:489
+#: src/window.py:505
 msgid "Draw lines"
 msgstr ""
 
-#: src/window.py:490
+#: src/window.py:506
 msgid "Erase where you drag"
 msgstr ""
 
-#: src/window.py:491
+#: src/window.py:507
 msgid "Draw straight lines"
 msgstr ""
 
-#: src/window.py:492
+#: src/window.py:508
 msgid "Draw rectangles"
 msgstr ""
 
-#: src/window.py:493
+#: src/window.py:509
 msgid "Draw ovals"
 msgstr ""
 
-#: src/window.py:494
+#: src/window.py:510
 msgid "Type text"
 msgstr ""
 
-#: src/window.py:496
+#: src/window.py:512
 msgid "Tool"
 msgstr ""

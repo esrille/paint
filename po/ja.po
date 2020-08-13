@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-12 21:57+0900\n"
+"POT-Creation-Date: 2020-08-14 02:26+0900\n"
 "PO-Revision-Date: 2020-07-30 22:30+0900\n"
 "Last-Translator: Esrille Inc. <info@esrille.com>\n"
 "Language-Team: Japanese <info@esrille.com>\n"
@@ -139,62 +139,66 @@ msgstr "help/ja/index.html"
 msgid "Open File"
 msgstr "ファイルを開く"
 
-#: src/window.py:423
+#: src/window.py:426
+msgid "Failed to save image."
+msgstr "画像を保存できませんでした。"
+
+#: src/window.py:434
 msgid "Save File"
 msgstr "名前をつけて保存"
 
-#: src/window.py:467
+#: src/window.py:483
 msgid "1 px"
 msgstr "1ドット"
 
-#: src/window.py:468
+#: src/window.py:484
 msgid "2 px"
 msgstr "2ドット"
 
-#: src/window.py:469
+#: src/window.py:485
 msgid "4 px"
 msgstr "4ドット"
 
-#: src/window.py:470
+#: src/window.py:486
 msgid "8 px"
 msgstr "8ドット"
 
-#: src/window.py:472
+#: src/window.py:488
 msgid "Style"
 msgstr "スタイル"
 
-#: src/window.py:487
+#: src/window.py:503
 msgid "Select a non-rectangular area"
 msgstr "矩形以外の領域を選択します"
 
-#: src/window.py:488
+#: src/window.py:504
 msgid "Select a rectangular area"
 msgstr "矩形の領域を選択します"
 
-#: src/window.py:489
+#: src/window.py:505
 msgid "Draw lines"
 msgstr "線をかきます"
 
-#: src/window.py:490
+#: src/window.py:506
 msgid "Erase where you drag"
 msgstr "ドラッグした部分を消します"
 
-#: src/window.py:491
+#: src/window.py:507
 msgid "Draw straight lines"
 msgstr "直線をかきます"
 
-#: src/window.py:492
+#: src/window.py:508
 msgid "Draw rectangles"
 msgstr "長方形をかきます"
 
-#: src/window.py:493
+#: src/window.py:509
 msgid "Draw ovals"
 msgstr "楕円形をかきます"
 
-#: src/window.py:494
+#: src/window.py:510
 msgid "Type text"
 msgstr "テキストを入力します"
 
-#: src/window.py:496
+#: src/window.py:512
 msgid "Tool"
 msgstr "ツール"
