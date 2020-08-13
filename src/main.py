@@ -40,7 +40,7 @@ if __name__ == '__main__':
     gettext.bindtextdomain(package.get_domain(), package.get_localedir())
     logging.basicConfig(level=logging.DEBUG)
 
-    resource = Gio.Resource.load(os.path.join(os.path.dirname(__file__), 'esrille-paint.gresource'))
+    resource = Gio.Resource.load(os.path.join(package.get_datadir(), 'esrille-paint.gresource'))
     resource._register()
 
     style_provider = Gtk.CssProvider()

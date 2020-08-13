@@ -17,7 +17,7 @@ $(PACKAGE_NAME).gresource: $(PACKAGE_NAME).gresource.xml $(resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) $<
 
 paint_DATA = $(PACKAGE_NAME).gresource
-paintdir = $(pkgdatadir)/src
+paintdir = $(pkgdatadir)
 
 CLEANFILES = \
 	$(PACKAGE_NAME).gresource \
