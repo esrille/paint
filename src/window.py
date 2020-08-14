@@ -108,7 +108,7 @@ class Window(Gtk.ApplicationWindow):
         'tool': (GObject.SIGNAL_RUN_FIRST, None, (str,))
     }
 
-    def __init__(self, app, file=None, buffer=None):
+    def __init__(self, app, file=None, buffer=None, transparent_mode=True):
         self.title = _("Paint")
         super().__init__(application=app, title=self.title)
         self.set_default_size(DEFAULT_WIDTH, DEFAULT_HEIGHT)
@@ -187,6 +187,7 @@ class Window(Gtk.ApplicationWindow):
             self.file = None
         self.paintview = PaintView(buffer)
         self.buffer = self.paintview.get_buffer()
+        self.buffer.set_transparent_mode(transparent_mode)
 
         scrolled_window.add(self.paintview)
         overlay.add(scrolled_window)
@@ -215,6 +216,11 @@ class Window(Gtk.ApplicationWindow):
             action.connect("activate", method)
             self.add_action(action)
         self.connect("delete-event", self.on_delete_event)
+
+        action = Gio.SimpleAction.new_stateful(
+            "transparent-selection-mode", None, GLib.Variant.new_boolean(transparent_mode))
+        action.connect("activate", self.transparent_selection_mode_callback)
+        self.add_action(action)
 
         self.paintview.grab_focus()
 
@@ -350,7 +356,9 @@ class Window(Gtk.ApplicationWindow):
             width = parse_int(width.get_text())
             height = parse_int(height.get_text())
             buffer = PaintBuffer(width, height)
-            win = Window(self.get_application(), buffer=buffer)
+            win = Window(self.get_application(),
+                         buffer=buffer,
+                         transparent_mode=self.buffer.get_transparent_mode())
             win.show_all()
             win.present()
         dialog.destroy()
@@ -396,7 +404,9 @@ class Window(Gtk.ApplicationWindow):
             if file:
                 win = self.get_application().is_opened(file)
                 if not win:
-                    win = Window(self.get_application(), file)
+                    win = Window(self.get_application(),
+                                 file=file,
+                                 transparent_mode=self.buffer.get_transparent_mode())
                     win.show_all()
                 win.present()
         dialog.destroy()
@@ -519,6 +529,11 @@ class Window(Gtk.ApplicationWindow):
         tool = widget.get_active()
         self.emit('tool', tool)
         widget.destroy()
+
+    def transparent_selection_mode_callback(self, action, parameter):
+        mode = not action.get_state()
+        action.set_state(GLib.Variant.new_boolean(mode))
+        self.buffer.set_transparent_mode(mode)
 
     def undo_callback(self, *whatever):
         self.paintview.emit('undo')

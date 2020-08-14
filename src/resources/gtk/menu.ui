@@ -5,19 +5,16 @@
         <item>
           <attribute name="label" translatable="yes">_New…</attribute>
           <attribute name="action">win.new</attribute>
-          <attribute name="accel">&lt;Primary&gt;n</attribute>
         </item>
         <item>
           <attribute name="label" translatable="yes">_Open…</attribute>
           <attribute name="action">win.open</attribute>
-          <attribute name="accel">&lt;Primary&gt;o</attribute>
         </item>
     </section>
     <section>
       <item>
         <attribute name="label" translatable="yes">_Save</attribute>
         <attribute name="action">win.save</attribute>
-        <attribute name="accel">&lt;Primary&gt;s</attribute>
       </item>
       <item>
         <attribute name="label" translatable="yes">Save _As…</attribute>
@@ -28,6 +25,10 @@
         <item>
           <attribute name="label" translatable="yes">_Font…</attribute>
           <attribute name="action">win.font</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Transparent Mode</attribute>
+          <attribute name="action">win.transparent-selection-mode</attribute>
         </item>
     </section>
     <section>
