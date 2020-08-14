@@ -112,6 +112,7 @@ Open...<br><b>[Ctrl]+[O]</b> | Select the image file to open, then click [Open] 
 Save<br><b>[Ctrl]+[S]</b> | Save changes.<br>Enter a filename the first time you save a new image, then click the [Save] button in the dialog box.
 Save As... | Save a copy of the image.<br>Enter a filename for the copy, then click the [Save] button in the dialog box.
 Font... | Change the font and font size used with the Text tool.
+Transparent Mode | If enabled, selection tools do not select pixels of the background color.
 Help | Open the Paint's user guide in the default web browser.
 About Paint | Open a dialog box that displays the Paint's version number and other information.
 
