@@ -2,14 +2,14 @@
 <interface>
   <menu id="app-menu">
     <section>
-        <item>
-          <attribute name="label" translatable="yes">_New…</attribute>
-          <attribute name="action">win.new</attribute>
-        </item>
-        <item>
-          <attribute name="label" translatable="yes">_Open…</attribute>
-          <attribute name="action">win.open</attribute>
-        </item>
+      <item>
+        <attribute name="label" translatable="yes">_New…</attribute>
+        <attribute name="action">win.new</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Open…</attribute>
+        <attribute name="action">win.open</attribute>
+      </item>
     </section>
     <section>
       <item>
@@ -22,14 +22,20 @@
       </item>
     </section>
     <section>
-        <item>
-          <attribute name="label" translatable="yes">_Font…</attribute>
-          <attribute name="action">win.font</attribute>
-        </item>
-        <item>
-          <attribute name="label" translatable="yes">_Transparent Mode</attribute>
-          <attribute name="action">win.transparent-selection-mode</attribute>
-        </item>
+      <item>
+        <attribute name="label" translatable="yes">_Font…</attribute>
+        <attribute name="action">win.font</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Transparent Mode</attribute>
+        <attribute name="action">win.transparent-selection-mode</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Background Color</attribute>
+        <attribute name="action">win.background-color</attribute>
+      </item>
     </section>
     <section>
       <item>

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-14 10:18+0900\n"
+"POT-Creation-Date: 2020-08-14 15:47+0900\n"
 "PO-Revision-Date: 2020-07-30 22:30+0900\n"
 "Last-Translator: Esrille Inc. <info@esrille.com>\n"
 "Language-Team: Japanese <info@esrille.com>\n"
@@ -35,15 +35,19 @@ msgstr "名前をつけて保存(_A)…"
 msgid "_Font…"
 msgstr "フォント(_F)…"
 
-#: src/resources/gtk/menu.ui:30
+#: src/resources/gtk/menu.ui:32
 msgid "_Transparent Mode"
-msgstr "透過モード"
+msgstr "透過モード(_T)"
 
-#: src/resources/gtk/menu.ui:37
+#: src/resources/gtk/menu.ui:36
+msgid "_Background Color"
+msgstr "背景色(_B)"
+
+#: src/resources/gtk/menu.ui:43
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: src/resources/gtk/menu.ui:41
+#: src/resources/gtk/menu.ui:47
 msgid "_About Paint"
 msgstr "ペイントについて(_A)"
 
@@ -63,7 +67,7 @@ msgstr "幅:"
 msgid "Height:"
 msgstr "高さ:"
 
-#: src/paint.py:1117
+#: src/paint.py:1120
 msgid "Noto Serif 24px"
 msgstr "Noto Serif CJK JP 24px"
 
@@ -107,102 +111,106 @@ msgstr "ツールを選びます"
 msgid "Select the current line width"
 msgstr "線の幅を選びます"
 
-#: src/window.py:269
+#: src/window.py:270
 msgid "PNG images"
 msgstr "PNG画像"
 
-#: src/window.py:274
+#: src/window.py:275
 msgid "Any files"
 msgstr "すべてのファイル"
 
-#: src/window.py:297
+#: src/window.py:280
+msgid "Background Color"
+msgstr "背景色"
+
+#: src/window.py:309
 msgid "Save changes to this image?"
 msgstr "かきかえた画像を保存しますか？"
 
-#: src/window.py:298
+#: src/window.py:310
 msgid "If you don't, changes will be lost."
 msgstr "保存しないと、変更は残りません。"
 
-#: src/window.py:299
+#: src/window.py:311
 msgid "Close _Without Saving"
 msgstr "保存しないで閉じる(_W)"
 
-#: src/window.py:324
+#: src/window.py:336
 msgid "Font"
 msgstr "フォント"
 
-#: src/window.py:325
+#: src/window.py:337
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "ひさかたのひかりのどけきはるの日に しづごころなく花のちるらむ"
 
-#: src/window.py:340
+#: src/window.py:352
 msgid "help/en/index.html"
 msgstr "help/ja/index.html"
 
-#: src/window.py:392
+#: src/window.py:404
 msgid "Open File"
 msgstr "ファイルを開く"
 
-#: src/window.py:436
+#: src/window.py:448
 msgid "Failed to save image."
 msgstr "画像を保存できませんでした。"
 
-#: src/window.py:444
+#: src/window.py:456
 msgid "Save File"
 msgstr "名前をつけて保存"
 
-#: src/window.py:493
+#: src/window.py:505
 msgid "1 px"
 msgstr "1ドット"
 
-#: src/window.py:494
+#: src/window.py:506
 msgid "2 px"
 msgstr "2ドット"
 
-#: src/window.py:495
+#: src/window.py:507
 msgid "4 px"
 msgstr "4ドット"
 
-#: src/window.py:496
+#: src/window.py:508
 msgid "8 px"
 msgstr "8ドット"
 
-#: src/window.py:498
+#: src/window.py:510
 msgid "Style"
 msgstr "スタイル"
 
-#: src/window.py:513
+#: src/window.py:525
 msgid "Select a non-rectangular area"
 msgstr "矩形以外の領域を選択します"
 
-#: src/window.py:514
+#: src/window.py:526
 msgid "Select a rectangular area"
 msgstr "矩形の領域を選択します"
 
-#: src/window.py:515
+#: src/window.py:527
 msgid "Draw lines"
 msgstr "線をかきます"
 
-#: src/window.py:516
+#: src/window.py:528
 msgid "Erase where you drag"
 msgstr "ドラッグした部分を消します"
 
-#: src/window.py:517
+#: src/window.py:529
 msgid "Draw straight lines"
 msgstr "直線をかきます"
 
-#: src/window.py:518
+#: src/window.py:530
 msgid "Draw rectangles"
 msgstr "長方形をかきます"
 
-#: src/window.py:519
+#: src/window.py:531
 msgid "Draw ovals"
 msgstr "楕円形をかきます"
 
-#: src/window.py:520
+#: src/window.py:532
 msgid "Type text"
 msgstr "テキストを入力します"
 
-#: src/window.py:522
+#: src/window.py:534
 msgid "Tool"
 msgstr "ツール"

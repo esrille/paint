@@ -208,6 +208,7 @@ class Window(Gtk.ApplicationWindow):
             "paste": self.paste_callback,
             "selectall": self.select_all_callback,
             "font": self.font_callback,
+            "background-color": self.background_color_callback,
             "help": self.help_callback,
             "about": self.about_callback,
         }
@@ -274,6 +275,17 @@ class Window(Gtk.ApplicationWindow):
         filter_any.set_name(_("Any files"))
         filter_any.add_pattern("*")
         dialog.add_filter(filter_any)
+
+    def background_color_callback(self, *whatever):
+        dialog = Gtk.ColorChooserDialog(_("Background Color"), self)
+        color = self.buffer.get_background_color()
+        rgba = Gdk.RGBA(color[0], color[1], color[2])
+        dialog.set_rgba(rgba)
+        if dialog.run() == Gtk.ResponseType.OK:
+            rgba = dialog.get_rgba()
+            self.buffer.set_background_color((rgba.red, rgba.green, rgba.blue))
+            self.paintview.queue_draw()
+        dialog.destroy()
 
     def close_all_callback(self, *whatever):
         windows = self.get_application().get_windows()

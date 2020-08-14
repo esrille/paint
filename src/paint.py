@@ -1059,6 +1059,9 @@ class PaintBuffer(GObject.Object):
     def get_width(self):
         return self.surface.get_width()
 
+    def set_background_color(self, rgb):
+        self.background_color = rgb
+
     def set_modified(self, setting):
         if self.modified == setting:
             return
@@ -1076,8 +1079,10 @@ class PaintBuffer(GObject.Object):
         self.transparent_mode = mode
         if self.transparent_mode:
             self.surface = self._make_transparent(self.surface)
+            self.original = self._make_transparent(self.original)
         else:
             self.surface = self._make_opaque(self.surface)
+            self.original = self._make_opaque(self.original)
 
     def set_source_rgba(self, cr):
         if self.transparent_mode and self.appending:
@@ -1087,8 +1092,7 @@ class PaintBuffer(GObject.Object):
         cr.set_source_rgba(*self.get_background_color(), alpha)
 
     def write_to_png(self, fobj):
-        copy = self._make_opaque(self.surface)
-        copy.write_to_png(fobj)
+        self.surface.write_to_png(fobj)
 
 
 class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
