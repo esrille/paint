@@ -574,11 +574,11 @@ class Lasso(SelectionBase):
         if super().on_mouse_move(view, event, x, y):
             if x < self.src[0][0]:
                 self.src[0][0] = x
+            elif self.src[1][0] < x:
+                self.src[1][0] = x
             if y < self.src[0][1]:
                 self.src[0][1] = y
-            if self.src[1][0] < x:
-                self.src[1][0] = x
-            if self.src[1][1] < y:
+            elif self.src[1][1] < y:
                 self.src[1][1] = y
             self.stroke.append((x, y))
 
@@ -592,7 +592,8 @@ class Lasso(SelectionBase):
 
     def on_mouse_release(self, view, event, x, y):
         if super().on_mouse_release(view, event, x, y):
-            if 3 <= len(self.stroke):
+            w, h = self.get_size(self.src)
+            if 0 < w and 0 < h:
                 self.dst = copy.deepcopy(self.src)
                 self.closed = True
             else:
