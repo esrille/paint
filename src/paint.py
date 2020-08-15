@@ -983,6 +983,7 @@ class FloodFill(Tool):
 class PaintBuffer(GObject.Object):
 
     __gsignals__ = {
+        'modified-changed': (GObject.SIGNAL_RUN_LAST, None, ()),
         'redo': (GObject.SIGNAL_RUN_LAST, None, ()),
         'undo': (GObject.SIGNAL_RUN_LAST, None, ())
     }
@@ -999,7 +1000,6 @@ class PaintBuffer(GObject.Object):
             cr.set_source_rgba(*self.background_color, 1)
             cr.paint()
         self.original = self._copy_surface(self.surface)
-        self.modified = False
         self.undo = []
         self.redo = []
         self.appending = False  # True during append()
@@ -1017,7 +1017,7 @@ class PaintBuffer(GObject.Object):
         return copy
 
     def append(self, tool):
-        self.set_modified(True)
+        was_modified = self.get_modified()
         self.appending = True
         self.undo.append(tool)
         self.redo.clear()
@@ -1030,6 +1030,8 @@ class PaintBuffer(GObject.Object):
             tool.on_draw(cr_alt, self)
             self.surface = alt
         self.appending = False
+        if not was_modified:
+            self.set_modified(True)
 
     def do_redo(self):
         if not self.redo:
@@ -1046,7 +1048,7 @@ class PaintBuffer(GObject.Object):
         self.redo = redo
 
     def do_undo(self):
-        if not self.undo:
+        if not self.get_modified():
             return
         logger.info("do_undo")
         tool = self.undo.pop()
@@ -1058,6 +1060,8 @@ class PaintBuffer(GObject.Object):
         for tool in undo:
             self.append(tool)
         self.redo = redo
+        if not self.get_modified():
+            self.emit('modified-changed')
 
     def draw(self, cr):
         cr.rectangle(0, 0, self.get_width(), self.get_height())
@@ -1073,7 +1077,7 @@ class PaintBuffer(GObject.Object):
         return self.surface.get_height()
 
     def get_modified(self):
-        return self.modified
+        return 0 < len(self.undo)
 
     def get_surface(self):
         return self.surface
@@ -1103,16 +1107,13 @@ class PaintBuffer(GObject.Object):
     def set_background_color(self, rgb):
         self.background_color = rgb
 
-    def set_modified(self, setting):
-        if self.modified == setting:
-            return
-        if self.modified:
+    def set_modified(self, modified):
+        if self.get_modified() and not modified:
             self.original = self._copy_surface(self.surface)
-            self.modified = False
             self.undo = []
             self.redo = []
-        else:
-            self.modified = True
+        self.emit('modified-changed')
+        return self.get_modified()
 
     def set_transparent_mode(self, mode):
         if self.transparent_mode == mode:

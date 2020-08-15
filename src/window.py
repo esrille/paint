@@ -181,6 +181,7 @@ class Window(Gtk.ApplicationWindow):
         scrolled_window.set_vexpand(True)
         scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
 
+        self.buffer = None
         if file:
             buffer = self._load_file(file)
         else:
@@ -188,6 +189,7 @@ class Window(Gtk.ApplicationWindow):
         self.paintview = PaintView(buffer)
         self.buffer = self.paintview.get_buffer()
         self.buffer.set_transparent_mode(transparent_mode)
+        self.buffer.connect_after("modified-changed", self.on_modified_changed)
 
         scrolled_window.add(self.paintview)
         overlay.add(scrolled_window)
@@ -234,15 +236,16 @@ class Window(Gtk.ApplicationWindow):
         self.paintview.grab_focus()
 
     def _load_file(self, file):
+        buffer = None
         if file:
             try:
                 stream = GioStream(file)
-                self.buffer = PaintBuffer.create_from_png(stream)
+                buffer = PaintBuffer.create_from_png(stream)
             except GObject.GError as e:
                 file = None
                 logger.error(e.message)
         self.set_file(file)
-        return self.buffer
+        return buffer
 
     def _replace_button_icon(self, button, icon):
         image = Gtk.Image.new_from_icon_name(icon + '-symbolic', Gtk.IconSize.BUTTON)
@@ -413,6 +416,14 @@ class Window(Gtk.ApplicationWindow):
             return True
         return False
 
+    def on_modified_changed(self, buffer):
+        title = self.title
+        if self.file:
+            title = self.file.get_basename() + " – " + title
+        if self.buffer.get_modified():
+            title = '*' + title
+        self.set_title(title)
+
     def on_mouse_press(self, wid, event):
         if event.button == Gdk.BUTTON_SECONDARY:
             self.tool_set_callback(self.tool_button)
@@ -515,13 +526,10 @@ class Window(Gtk.ApplicationWindow):
 
     def set_file(self, file):
         self.file = file
-        if self.file:
-            self.buffer.set_modified(False)
-            self.set_title(file.get_basename() + " ― " + self.title)
-            return False
+        if self.buffer:
+            return self.buffer.set_modified(not file)
         else:
-            self.set_title(self.title)
-            return True
+            return False
 
     def style_set_callback(self, style_button):
         style_icons = {
