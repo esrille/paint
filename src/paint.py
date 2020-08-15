@@ -44,6 +44,7 @@ MARQUEE_COLOR = (0.8, 0.6, 0.1, 1)
 
 class Tool:
     def __init__(self, view):
+        self.antialias = False
         self.color = (0, 0, 0, 1)
         self.line_width = 1
 
@@ -93,6 +94,8 @@ class Tool:
         cr.set_line_width(self.line_width)
         cr.set_line_cap(cairo.LineCap.ROUND)
         cr.set_line_join(cairo.LineJoin.ROUND)
+        if not self.antialias:
+            cr.set_antialias(cairo.Antialias.NONE)
 
     def on_key_press(self, view, im, event):
         return False
@@ -123,6 +126,9 @@ class Tool:
 
     def reflow(self, view):
         pass
+
+    def set_antialias(self, enable):
+        self.antialias = enable
 
     def set_color(self, red, green, blue, alpha=1):
         self.color = (red, green, blue, alpha)
@@ -1153,6 +1159,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         self._init_scrollable()
         self._init_immultiontext()
 
+        self.antialias = False
         self.color = (0, 0, 0, 1)
         self.line_width = 1
         self.tool_cls = Pencil
@@ -1184,6 +1191,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
     def _change_tool(self, tool_cls):
         self.tool_cls = tool_cls
         self.tool = tool_cls(self)
+        self.tool.set_antialias(self.antialias)
         self.tool.set_color(*self.color)
         self.tool.set_line_width(self.line_width)
         self._update_cursor(*self.last_mouse_point, False)
@@ -1266,6 +1274,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
                 self._commit_selection()
                 # Temporarily change tool
                 self.tool = Paste(self, image)
+                self.tool.set_antialias(self.antialias)
                 self.tool.set_color(*self.color)
                 self.queue_draw()
                 return
@@ -1470,6 +1479,10 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         if self._commit_selection():
             self._change_tool(self.tool_cls)
         self.queue_draw()
+
+    def set_antialias(self, enable):
+        self.antialias = enable
+        self.tool.set_antialias(enable)
 
     def set_buffer(self, buffer):
         if buffer:

@@ -219,6 +219,11 @@ class Window(Gtk.ApplicationWindow):
         self.connect("delete-event", self.on_delete_event)
 
         action = Gio.SimpleAction.new_stateful(
+            "antialias", None, GLib.Variant.new_boolean(False))
+        action.connect("activate", self.antialias_callback)
+        self.add_action(action)
+
+        action = Gio.SimpleAction.new_stateful(
             "transparent-selection-mode", None, GLib.Variant.new_boolean(transparent_mode))
         action.connect("activate", self.transparent_selection_mode_callback)
         self.add_action(action)
@@ -275,6 +280,11 @@ class Window(Gtk.ApplicationWindow):
         filter_any.set_name(_("Any files"))
         filter_any.add_pattern("*")
         dialog.add_filter(filter_any)
+
+    def antialias_callback(self, action, parameter):
+        enable = not action.get_state()
+        action.set_state(GLib.Variant.new_boolean(enable))
+        self.paintview.set_antialias(enable)
 
     def background_color_callback(self, *whatever):
         dialog = Gtk.ColorChooserDialog(_("Background Color"), self)
