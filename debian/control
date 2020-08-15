@@ -10,8 +10,7 @@ Vcs-Browser: https://github.com/esrille/paint
 
 Package: esrille-paint
 Architecture: all
-Depends: fonts-noto,
-         gir1.2-gtk-3.0,
+Depends: gir1.2-gtk-3.0,
          python3,
          python3-gi,
          python3-gi-cairo,
@@ -19,5 +18,5 @@ Depends: fonts-noto,
          ${gir:Depends},
          ${misc:Depends},
          ${python3:Depends}
-Recommends: fonts-noto-cjk, ibus-gtk, ibus-gtk3
+Recommends: ibus-gtk, ibus-gtk3
 Description: Create images

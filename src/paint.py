@@ -1166,7 +1166,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         self.tool = Pencil(self)
         self.set_buffer(buffer)
         self.caret = Gdk.Rectangle()
-        self.set_font(_("Noto Serif 24px"))
+        self.set_font(package.get_document_font_name())
         self.last_mouse_point = (-1, -1)
         self.clock = False
 

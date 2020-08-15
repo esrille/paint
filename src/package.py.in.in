@@ -23,6 +23,7 @@ from gi.repository import Gio, GLib
 
 APP_PATH = '/com/esrille/esrille-paint'
 HIRAGANA_IME_KEY = 'org.freedesktop.ibus.engine.hiragana'
+GNOME_INTERFACE_KEY = 'org.gnome.desktop.interface'
 
 
 def get_name():
@@ -58,3 +59,12 @@ def get_domain():
         if path in ('restrained.1.dic', 'restrained.2.dic', 'restrained.3.dic', 'restrained.4.dic', 'restrained.5.dic', 'restrained.6.dic'):
             return get_name() + '.kids'
     return get_name()
+
+
+def get_document_font_name():
+    font = 'Sans 10'
+    source = Gio.SettingsSchemaSource.get_default()
+    if source.lookup(GNOME_INTERFACE_KEY, True):
+        config = Gio.Settings.new(GNOME_INTERFACE_KEY)
+        font = config.get_string('document-font-name')
+    return font
