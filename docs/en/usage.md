@@ -63,6 +63,7 @@ Tool | Description
 ![Rectangle](../figures/rectangle-symbolic.svg) Rectangle | Draw a rectangle as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to draw squares.
 ![Oval](../figures/oval-symbolic.svg) Oval | Draw an oval as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to draw circles.
 ![Text](../figures/text-symbolic.svg) Text<br><b>[T]</b> | Type text.<br>Click where you want to add text. Then type your text.<br>You can move, stretch or shrink the text; position the mouse cursor around the text and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of the text.<br>• Use the [Escape] key to finish typing.
+![Flood Fill](../figures/floodfill-symbolic.svg) Flood Fill | Fill an outlined area.<br>Click in any outlined area you want to fill.
 
 ## Style
 
