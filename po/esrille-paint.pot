@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-14 15:47+0900\n"
+"POT-Creation-Date: 2020-08-15 10:51+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Height:"
 msgstr ""
 
-#: src/paint.py:1120
+#: src/paint.py:1162
 msgid "Noto Serif 24px"
 msgstr ""
 
@@ -213,6 +213,10 @@ msgstr ""
 msgid "Type text"
 msgstr ""
 
-#: src/window.py:534
+#: src/window.py:533
+msgid "Fill an outlined area"
+msgstr ""
+
+#: src/window.py:535
 msgid "Tool"
 msgstr ""

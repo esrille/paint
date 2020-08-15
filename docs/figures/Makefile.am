@@ -18,6 +18,7 @@ dist_figures_DATA = \
 	4px-symbolic.svg \
 	8px-symbolic.svg \
 	eraser-symbolic.svg \
+	floodfill-symbolic.svg \
 	lasso-symbolic.svg \
 	line-symbolic.svg \
 	oval-symbolic.svg \

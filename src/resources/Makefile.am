@@ -32,6 +32,7 @@ EXTRA_DIST = \
 	icons/scalable/actions/4px-symbolic.svg \
 	icons/scalable/actions/8px-symbolic.svg \
 	icons/scalable/actions/eraser-symbolic.svg \
+	icons/scalable/actions/floodfill-symbolic.svg \
 	icons/scalable/actions/lasso-symbolic.svg \
 	icons/scalable/actions/line-symbolic.svg \
 	icons/scalable/actions/oval-symbolic.svg \

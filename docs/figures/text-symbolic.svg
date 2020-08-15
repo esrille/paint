@@ -5,10 +5,10 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   id="svg4"
-   version="1.1"
+   width="16"
    height="16"
-   width="16">
+   version="1.1"
+   id="svg4">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -23,18 +23,8 @@
   </metadata>
   <defs
      id="defs8" />
-  <g
-     transform="rotate(-130.97435,7.9453381,8.1187434)"
-     id="g822">
-    <g
-       id="text816"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Bau Pro';-inkscape-font-specification:'Bau Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="rotate(130.97435)"
-       aria-label="A">
-      <path
-         id="path818"
-         style="font-size:16px;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1"
-         d="m -1.5580807,-8.2331308 h 4.9397058 l 1.0201566,2.816 H 6.8895321 L 2.3793659,-17.46513 H -0.26946168 L -4.9407054,-5.4171308 h 2.3266731 z M 2.7015206,-10.08913 h -3.56159928 l 1.807646,-4.784 z" />
-    </g>
-  </g>
+  <path
+     id="path834"
+     d="M 6.7558592,1.9765623 2.0839842,14.023438 h 2.328125 L 5.4667967,11.207031 H 10.40625 l 1.021484,2.816407 h 2.488282 L 9.4042967,1.9765623 Z M 7.972656,4.5683592 9.7265623,9.3515623 H 6.1660154 Z"
+     style="display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
 </svg>

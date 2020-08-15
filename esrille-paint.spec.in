@@ -9,7 +9,7 @@ Requires:   google-noto-cjk-fonts-common, google-noto-fonts-common
 Requires:   gtk3
 Requires:   python3
 Requires:   python3-gobject
-Requires:   python3-pyxdg
+Requires:   python3-opencv
 BuildRequires: gettext-devel
 BuildRequires: glib2-devel
 BuildRequires: libtool

@@ -529,7 +529,8 @@ class Window(Gtk.ApplicationWindow):
             "line": _("Draw straight lines"),
             "rectangle": _("Draw rectangles"),
             "oval": _("Draw ovals"),
-            "text": _("Type text")
+            "text": _("Type text"),
+            "floodfill": _("Fill an outlined area")
         }
         dialog = PalletDialog(_("Tool"), tool_icons, self.paintview.get_tool())
         dialog.set_transient_for(self)

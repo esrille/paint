@@ -24,9 +24,11 @@ from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, GObject, Pango, PangoCairo
 
 import cairo
 import copy
+import cv2
 import gettext
 import logging
 import math
+import numpy
 import time
 
 
@@ -940,6 +942,38 @@ class Paste(SelectionBase):
             cr.stroke()
 
 
+class FloodFill(Tool):
+    def __init__(self, view):
+        super().__init__(view)
+        self.x = 0
+        self.y = 0
+        self.clicked = False
+
+    @classmethod
+    def get_name(self):
+        return 'floodfill'
+
+    def on_draw(self, cr, buffer):
+        if not self.clicked:
+            return
+        surface = buffer.make_opaque(buffer.get_surface())
+        buf = surface.get_data()
+        array = numpy.ndarray(shape=(surface.get_height(), surface.get_width(), 4),
+                              dtype=numpy.uint8, buffer=buf)
+        array = cv2.cvtColor(array, cv2.COLOR_RGBA2BGR)
+        color = [int(255 * i) for i in self.color[:3]]
+        cv2.floodFill(array, None, (self.x, self.y), color)
+        array = cv2.cvtColor(array, cv2.COLOR_BGR2RGBA)
+        surface = cairo.ImageSurface.create_for_data(array, cairo.FORMAT_ARGB32,
+                                                     surface.get_width(), surface.get_height())
+        buffer.set_surface(surface)
+
+    def on_mouse_release(self, view, event, x, y):
+        self.x = x
+        self.y = y
+        self.clicked = True
+
+
 class PaintBuffer(GObject.Object):
 
     __gsignals__ = {
@@ -967,21 +1001,6 @@ class PaintBuffer(GObject.Object):
     @classmethod
     def create_from_png(cls, fobj):
         return cls(None, None, fobj)
-
-    def _make_transparent(self, surface):
-        pixbuf = Gdk.pixbuf_get_from_surface(self.surface, 0, 0, surface.get_width(), surface.get_height())
-        rgb = [int(i * 255) for i in self.get_background_color()]
-        pixbuf = pixbuf.add_alpha(True, *rgb)
-        return Gdk.cairo_surface_create_from_pixbuf(pixbuf, 0, None)
-
-    def _make_opaque(self, surface):
-        copy = cairo.ImageSurface(cairo.FORMAT_ARGB32, surface.get_width(), surface.get_height())
-        cr = cairo.Context(copy)
-        cr.set_source_rgba(*self.background_color, 1)
-        cr.paint()
-        cr.set_source_surface(surface)
-        cr.paint()
-        return copy
 
     def _copy_surface(self, surface):
         copy = surface.create_similar_image(cairo.FORMAT_ARGB32, surface.get_width(), surface.get_height())
@@ -1059,6 +1078,22 @@ class PaintBuffer(GObject.Object):
     def get_width(self):
         return self.surface.get_width()
 
+    def make_opaque(self, surface):
+        copy = cairo.ImageSurface(cairo.FORMAT_ARGB32, surface.get_width(), surface.get_height())
+        cr = cairo.Context(copy)
+        cr.set_source_rgba(*self.background_color, 1)
+        cr.paint()
+        cr.set_source_surface(surface)
+        cr.paint()
+        return copy
+
+    def make_transparent(self, surface):
+        pixbuf = Gdk.pixbuf_get_from_surface(self.surface, 0, 0,
+                                             surface.get_width(), surface.get_height())
+        rgb = [int(i * 255) for i in self.get_background_color()]
+        pixbuf = pixbuf.add_alpha(True, *rgb)
+        return Gdk.cairo_surface_create_from_pixbuf(pixbuf, 0, None)
+
     def set_background_color(self, rgb):
         self.background_color = rgb
 
@@ -1078,11 +1113,11 @@ class PaintBuffer(GObject.Object):
             return
         self.transparent_mode = mode
         if self.transparent_mode:
-            self.surface = self._make_transparent(self.surface)
-            self.original = self._make_transparent(self.original)
+            self.surface = self.make_transparent(self.surface)
+            self.original = self.make_transparent(self.original)
         else:
-            self.surface = self._make_opaque(self.surface)
-            self.original = self._make_opaque(self.original)
+            self.surface = self.make_opaque(self.surface)
+            self.original = self.make_opaque(self.original)
 
     def set_source_rgba(self, cr):
         if self.transparent_mode and self.appending:
@@ -1090,6 +1125,11 @@ class PaintBuffer(GObject.Object):
         else:
             alpha = 1
         cr.set_source_rgba(*self.get_background_color(), alpha)
+
+    def set_surface(self, surface):
+        self.surface = surface
+        if self.get_transparent_mode():
+            self.surface = self.make_transparent(surface)
 
     def write_to_png(self, fobj):
         self.surface.write_to_png(fobj)
@@ -1259,7 +1299,8 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
             "line": Line,
             "rectangle": Rectangle,
             "oval": Oval,
-            "text": Text
+            "text": Text,
+            "floodfill": FloodFill
         }.get(tool, Pencil)
         self._change_tool(cls)
         self.queue_draw()

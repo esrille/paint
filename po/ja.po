@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-14 15:47+0900\n"
+"POT-Creation-Date: 2020-08-15 10:51+0900\n"
 "PO-Revision-Date: 2020-07-30 22:30+0900\n"
 "Last-Translator: Esrille Inc. <info@esrille.com>\n"
 "Language-Team: Japanese <info@esrille.com>\n"
@@ -67,7 +67,7 @@ msgstr "幅:"
 msgid "Height:"
 msgstr "高さ:"
 
-#: src/paint.py:1120
+#: src/paint.py:1162
 msgid "Noto Serif 24px"
 msgstr "Noto Serif CJK JP 24px"
 
@@ -211,6 +211,10 @@ msgstr "楕円形をかきます"
 msgid "Type text"
 msgstr "テキストを入力します"
 
-#: src/window.py:534
+#: src/window.py:533
+msgid "Fill an outlined area"
+msgstr "囲まれている範囲を塗りつぶします"
+
+#: src/window.py:535
 msgid "Tool"
 msgstr "ツール"
