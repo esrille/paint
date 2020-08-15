@@ -193,6 +193,8 @@ class Window(Gtk.ApplicationWindow):
         overlay.add(scrolled_window)
 
         self.connect_after("key-press-event", self.on_key_press_event)
+        self.connect_after('button-press-event', self.on_mouse_press)
+        self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
 
         actions = {
             "menu": self.menu_callback,
@@ -406,7 +408,14 @@ class Window(Gtk.ApplicationWindow):
         elif event.keyval in (Gdk.KEY_T, Gdk.KEY_t):
             self.do_tool('text')
             return True
+        elif event.keyval == Gdk.KEY_Menu:
+            self.tool_set_callback(self.tool_button)
+            return True
         return False
+
+    def on_mouse_press(self, wid, event):
+        if event.button == Gdk.BUTTON_SECONDARY:
+            self.tool_set_callback(self.tool_button)
 
     def do_tool(self, tool):
         self.paintview.emit('tool', tool)

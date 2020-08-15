@@ -1437,7 +1437,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
             self.tool.on_mouse_press(self, event, x, y)
             self.queue_draw()
         self._update_cursor(x, y, True)
-        return True
+        return False
 
     def on_mouse_release(self, wid, event):
         x, y = self._get_offset()
