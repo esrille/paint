@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-15 11:38+0900\n"
+"POT-Creation-Date: 2020-08-15 14:55+0900\n"
 "PO-Revision-Date: 2020-07-30 22:30+0900\n"
 "Last-Translator: Esrille Inc. <info@esrille.com>\n"
 "Language-Team: Japanese <info@esrille.com>\n"
@@ -35,13 +35,13 @@ msgstr "名前をつけて保存(_A)…"
 msgid "_Font…"
 msgstr "フォント(_F)…"
 
-#: src/resources/gtk/menu.ui:30
-msgid "Ant_ialias…"
-msgstr "アンチエイリアス(_I)"
-
-#: src/resources/gtk/menu.ui:36
+#: src/resources/gtk/menu.ui:32
 msgid "_Transparent Mode"
 msgstr "透過モード(_T)"
+
+#: src/resources/gtk/menu.ui:36
+msgid "Ant_i-Aliased"
+msgstr "アンチエイリアス(_I)"
 
 #: src/resources/gtk/menu.ui:40
 msgid "_Background Color"

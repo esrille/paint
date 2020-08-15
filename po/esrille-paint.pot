@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2020-08-15 11:38+0900\n"
+"POT-Creation-Date: 2020-08-15 14:55+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,12 +37,12 @@ msgstr ""
 msgid "_Font…"
 msgstr ""
 
-#: src/resources/gtk/menu.ui:30
-msgid "Ant_ialias…"
+#: src/resources/gtk/menu.ui:32
+msgid "_Transparent Mode"
 msgstr ""
 
 #: src/resources/gtk/menu.ui:36
-msgid "_Transparent Mode"
+msgid "Ant_i-Aliased"
 msgstr ""
 
 #: src/resources/gtk/menu.ui:40
