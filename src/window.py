@@ -134,16 +134,16 @@ class Window(Gtk.ApplicationWindow):
             self.headerbar.pack_start(button)
 
         # See https://gitlab.gnome.org/GNOME/Initiatives/-/wikis/App-Menu-Retirement
-        menu_button = Gtk.MenuButton()
+        self.menu_button = Gtk.MenuButton()
         hamburger_icon = Gio.ThemedIcon(name="open-menu-symbolic")
         image = Gtk.Image.new_from_gicon(hamburger_icon, Gtk.IconSize.BUTTON)
-        menu_button.add(image)
+        self.menu_button.add(image)
         builder = Gtk.Builder()
         builder.set_translation_domain(package.get_name())
         builder.add_from_resource(package.APP_PATH + '/gtk/menu.ui')
-        menu_button.set_menu_model(builder.get_object('app-menu'))
-        menu_button.set_can_focus(False)
-        self.headerbar.pack_end(menu_button)
+        self.menu_button.set_menu_model(builder.get_object('app-menu'))
+        self.menu_button.set_can_focus(False)
+        self.headerbar.pack_end(self.menu_button)
 
         self.save_button = Gtk.Button.new_with_mnemonic(_("_Save"))
         self.save_button.connect("clicked", self.save_callback)
@@ -195,6 +195,7 @@ class Window(Gtk.ApplicationWindow):
         self.connect_after("key-press-event", self.on_key_press_event)
 
         actions = {
+            "menu": self.menu_callback,
             "new": self.new_callback,
             "open": self.open_callback,
             "save": self.save_callback,
@@ -361,6 +362,9 @@ class Window(Gtk.ApplicationWindow):
     def help_callback(self, *whatever):
         url = "file://" + os.path.join(package.get_datadir(), _("help/en/index.html"))
         Gtk.show_uri_on_window(self, url, Gdk.CURRENT_TIME)
+
+    def menu_callback(self, *whatever):
+        self.menu_button.set_active(not self.menu_button.get_active())
 
     def new_callback(self, *whatever):
         builder = Gtk.Builder()

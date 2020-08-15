@@ -58,6 +58,8 @@ class Application(Gtk.Application):
         self.set_accels_for_action("win.closeall", ["<Primary>Q"])
         self.set_accels_for_action("win.copy", ["<Primary>C"])
         self.set_accels_for_action("win.cut", ["<Primary>X"])
+        self.set_accels_for_action("win.help", ["F1"])
+        self.set_accels_for_action("win.menu", ["F10"])
         self.set_accels_for_action("win.new", ["<Primary>N"])
         self.set_accels_for_action("win.paste", ["<Primary>V"])
         self.set_accels_for_action("win.redo", ["<Shift><Primary>Z"])
