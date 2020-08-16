@@ -335,7 +335,7 @@ class Window(Gtk.ApplicationWindow):
         elif response == Gtk.ResponseType.YES:
             # Close the window after saving changes
             self.close_after_save = True
-            if self.file is not None:
+            if self.file:
                 return self.save()
             else:
                 return self.save_as()
@@ -368,6 +368,16 @@ class Window(Gtk.ApplicationWindow):
         url = "file://" + os.path.join(package.get_datadir(), _("help/en/index.html"))
         Gtk.show_uri_on_window(self, url, Gdk.CURRENT_TIME)
 
+    def initialize_file_chooser(self, dialog):
+        if self.file:
+            try:
+                dialog.set_file(self.file)
+            except GObject.GError as e:
+                logger.error(e.message)
+        else:
+            folder = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_PICTURES)
+            dialog.set_current_folder(folder)
+
     def menu_callback(self, *whatever):
         self.menu_button.set_active(not self.menu_button.get_active())
 
@@ -398,7 +408,7 @@ class Window(Gtk.ApplicationWindow):
         return self.confirm_save_changes()
 
     def on_key_press_event(self, wid, event):
-        logger.info("on_key_press: '%s', %08x", Gdk.keyval_name(event.keyval), event.state)
+        logger.debug("on_key_press: '%s', %08x", Gdk.keyval_name(event.keyval), event.state)
         if event.keyval in (Gdk.KEY_E, Gdk.KEY_e):
             self.do_tool('eraser')
             return True
@@ -434,15 +444,16 @@ class Window(Gtk.ApplicationWindow):
         self._update_tool_button(tool)
 
     def open_callback(self, *whatever):
-        open_dialog = Gtk.FileChooserDialog(
+        dialog = Gtk.FileChooserDialog(
             _("Open File"), self,
             Gtk.FileChooserAction.OPEN,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
              Gtk.STOCK_OPEN, Gtk.ResponseType.ACCEPT))
-        self.add_filters(open_dialog)
-        open_dialog.set_modal(True)
-        open_dialog.connect("response", self.open_response_callback)
-        open_dialog.show()
+        self.initialize_file_chooser(dialog)
+        dialog.unselect_all()
+        self.add_filters(dialog)
+        dialog.connect("response", self.open_response_callback)
+        dialog.show()
 
     def open_response_callback(self, dialog, response):
         if response == Gtk.ResponseType.ACCEPT:
@@ -483,6 +494,7 @@ class Window(Gtk.ApplicationWindow):
         dialog.format_secondary_text(message)
         dialog.run()
         dialog.destroy()
+        self.save_as()
         return True
 
     def save_as(self):
@@ -492,12 +504,7 @@ class Window(Gtk.ApplicationWindow):
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
              Gtk.STOCK_SAVE, Gtk.ResponseType.ACCEPT))
         dialog.set_do_overwrite_confirmation(True)
-        dialog.set_modal(True)
-        if self.file is not None:
-            try:
-                dialog.set_file(self.file)
-            except GObject.GError as e:
-                logger.error(e.message)
+        self.initialize_file_chooser(dialog)
         dirty = True
         while dirty:
             dialog.hide()
@@ -515,7 +522,7 @@ class Window(Gtk.ApplicationWindow):
         self.save_as()
 
     def save_callback(self, *whatever):
-        if self.file is not None:
+        if self.file:
             self.save()
         else:
             self.save_as()
