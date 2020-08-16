@@ -505,6 +505,10 @@ class Window(Gtk.ApplicationWindow):
              Gtk.STOCK_SAVE, Gtk.ResponseType.ACCEPT))
         dialog.set_do_overwrite_confirmation(True)
         self.initialize_file_chooser(dialog)
+        if not self.file:
+            d = GLib.DateTime.new_now_local()
+            name = d.format("P_%Y%m%d_%H%M%S.png")
+            dialog.set_current_name(name)
         dirty = True
         while dirty:
             dialog.hide()
