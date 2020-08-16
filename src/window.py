@@ -190,6 +190,7 @@ class Window(Gtk.ApplicationWindow):
         self.buffer = self.paintview.get_buffer()
         self.buffer.set_transparent_mode(transparent_mode)
         self.buffer.connect_after("modified-changed", self.on_modified_changed)
+        self.paintview.connect_after("tool-changed", self.on_tool_changed)
 
         scrolled_window.add(self.paintview)
         overlay.add(scrolled_window)
@@ -252,9 +253,6 @@ class Window(Gtk.ApplicationWindow):
         button.remove(button.get_child())
         button.add(image)
         button.show_all()
-
-    def _update_tool_button(self, tool):
-        self._replace_button_icon(self.tool_button, tool)
 
     def about_callback(self, action, parameter):
         dialog = Gtk.AboutDialog()
@@ -438,10 +436,11 @@ class Window(Gtk.ApplicationWindow):
         if event.button == Gdk.BUTTON_SECONDARY:
             self.tool_set_callback(self.tool_button)
 
+    def on_tool_changed(self, paintview):
+        self._replace_button_icon(self.tool_button, self.paintview.get_tool())
+
     def do_tool(self, tool):
         self.paintview.emit('tool', tool)
-        tool = self.paintview.get_tool()
-        self._update_tool_button(tool)
 
     def open_callback(self, *whatever):
         dialog = Gtk.FileChooserDialog(
@@ -470,7 +469,6 @@ class Window(Gtk.ApplicationWindow):
 
     def paste_callback(self, *whatever):
         self.paintview.emit('paste-clipboard')
-        self._update_tool_button(self.paintview.get_tool())
 
     def redo_callback(self, *whatever):
         self.paintview.emit('redo')
@@ -533,7 +531,6 @@ class Window(Gtk.ApplicationWindow):
 
     def select_all_callback(self, *whatever):
         self.paintview.emit('select-all', True)
-        self._update_tool_button('selection')
 
     def set_file(self, file):
         self.file = file

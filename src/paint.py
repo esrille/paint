@@ -1151,7 +1151,8 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         'redo': (GObject.SIGNAL_RUN_LAST, None, ()),
         'select-all': (GObject.SIGNAL_RUN_FIRST, None, (bool,)),
         'tool': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
-        'undo': (GObject.SIGNAL_RUN_LAST, None, ())
+        'undo': (GObject.SIGNAL_RUN_LAST, None, ()),
+        'tool-changed': (GObject.SIGNAL_RUN_FIRST, None, ())
     }
 
     def __init__(self, buffer=None):
@@ -1196,6 +1197,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         self.tool.set_color(*self.color)
         self.tool.set_line_width(self.line_width)
         self._update_cursor(*self.last_mouse_point, False)
+        self.emit('tool-changed')
 
     def _commit_selection(self):
         if self.tool.has_selection():
