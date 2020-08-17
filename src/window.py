@@ -190,6 +190,7 @@ class Window(Gtk.ApplicationWindow):
         self.buffer = self.paintview.get_buffer()
         self.buffer.set_transparent_mode(transparent_mode)
         self.buffer.connect_after("modified-changed", self.on_modified_changed)
+        self.paintview.connect_after("style-changed", self.on_style_changed)
         self.paintview.connect_after("tool-changed", self.on_tool_changed)
 
         scrolled_window.add(self.paintview)
@@ -436,6 +437,9 @@ class Window(Gtk.ApplicationWindow):
         if event.button == Gdk.BUTTON_SECONDARY:
             self.tool_set_callback(self.tool_button)
 
+    def on_style_changed(self, paintview):
+        self._replace_button_icon(self.style_button, self.paintview.get_style())
+
     def on_tool_changed(self, paintview):
         self._replace_button_icon(self.tool_button, self.paintview.get_tool())
 
@@ -556,7 +560,6 @@ class Window(Gtk.ApplicationWindow):
         style = widget.get_active()
         width = int(style[0:-2])
         self.paintview.set_line_width(width)
-        self._replace_button_icon(self.style_button, style)
         widget.destroy()
 
     def tool_set_callback(self, tool_button):

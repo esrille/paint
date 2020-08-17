@@ -1152,6 +1152,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         'select-all': (GObject.SIGNAL_RUN_FIRST, None, (bool,)),
         'tool': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
         'undo': (GObject.SIGNAL_RUN_LAST, None, ()),
+        'style-changed': (GObject.SIGNAL_RUN_FIRST, None, ()),
         'tool-changed': (GObject.SIGNAL_RUN_FIRST, None, ())
     }
 
@@ -1523,8 +1524,10 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
             self._hadjust_signal = adjustment.connect("value-changed", self.on_value_changed)
 
     def set_line_width(self, width):
-        self.line_width = width
-        self.tool.set_line_width(width)
+        if self.line_width != width:
+            self.line_width = width
+            self.tool.set_line_width(width)
+            self.emit('style-changed')
 
     def set_vadjustment(self, adjustment):
         if self._vadjustment:
