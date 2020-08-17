@@ -438,11 +438,7 @@ class SelectionBase(Tool):
             return False
         super().on_draw(cr, None)
         cr.save()
-        # To understand the transforms, read them bottom to top
-        cr.translate(self.dst[0][0], self.dst[0][1])
-        scale = self.get_scale()
-        cr.scale(scale[0], scale[1])
-        cr.translate(-self.src[0][0], -self.src[0][1])
+        self._transform(cr)
         self._create_path(cr)
         cr.restore()
         result = cr.in_fill(s, t)
@@ -1041,7 +1037,6 @@ class PaintBuffer(GObject.Object):
         self.undo.append(tool)
         redo, self.redo = self.redo, []
         self.surface = self._copy_surface(self.original)
-        cr = cairo.Context(self.surface)
         undo, self.undo = self.undo, []
         for tool in undo:
             self.append(tool)
@@ -1055,7 +1050,6 @@ class PaintBuffer(GObject.Object):
         self.redo.append(tool)
         redo, self.redo = self.redo, []
         self.surface = self._copy_surface(self.original)
-        cr = cairo.Context(self.surface)
         undo, self.undo = self.undo, []
         for tool in undo:
             self.append(tool)
