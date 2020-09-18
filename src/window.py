@@ -111,6 +111,7 @@ class Window(Gtk.ApplicationWindow):
     def __init__(self, app, file=None, buffer=None, transparent_mode=True):
         self.title = _("Paint")
         super().__init__(application=app, title=self.title)
+        self.set_default_icon_name(package.get_name())
         self.set_default_size(DEFAULT_WIDTH, DEFAULT_HEIGHT)
 
         self.headerbar = Gtk.HeaderBar(title=self.title, show_close_button=True)
