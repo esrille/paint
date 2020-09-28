@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-AC_INIT([esrille-paint], [0.1.0], [https://github.com/esrille/paint/issues])
+AC_INIT([esrille-paint], [0.2.0], [https://github.com/esrille/paint/issues])
 AM_INIT_AUTOMAKE([foreign tar-ustar])
 
 AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
