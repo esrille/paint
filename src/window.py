@@ -1,6 +1,6 @@
 # Paint
 #
-# Copyright (c) 2020 Esrille Inc.
+# Copyright (c) 2020, 2021 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import logging
 import os
 
 
-_ = lambda a : gettext.dgettext(package.get_domain(), a)
+_ = lambda a: gettext.dgettext(package.get_domain(), a)
 logger = logging.getLogger(__name__)
 
 DEFAULT_WIDTH = 1024
@@ -261,7 +261,7 @@ class Window(Gtk.ApplicationWindow):
         dialog.set_transient_for(self)
         dialog.set_modal(True)
         dialog.set_program_name(self.title)
-        dialog.set_copyright("Copyright 2020 Esrille Inc.")
+        dialog.set_copyright("Copyright 2020, 2021 Esrille Inc.")
         dialog.set_authors(["Esrille Inc."])
         dialog.set_documenters(["Esrille Inc."])
         dialog.set_website("http://www.esrille.com/")

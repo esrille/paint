@@ -1,6 +1,6 @@
 # Paint
 #
-# Copyright (c) 2020 Esrille Inc.
+# Copyright (c) 2020, 2021 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import numpy
 import time
 
 
-_ = lambda a : gettext.dgettext(package.get_domain(), a)
+_ = lambda a: gettext.dgettext(package.get_domain(), a)
 logger = logging.getLogger(__name__)
 
 DEFAULT_WIDTH = 1024
@@ -150,7 +150,7 @@ class Pencil(Tool):
         self.stroke = []
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'pencil'
 
     def get_cursor(self, view, x, y, pressed):
@@ -181,7 +181,7 @@ class Eraser(Pencil):
         super().__init__(view)
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'eraser'
 
     def get_cursor(self, view, x, y, pressed):
@@ -209,7 +209,7 @@ class Shape(Tool):
         self.height = 0
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'shape'
 
     def on_draw(self, cr, buffer):
@@ -233,7 +233,7 @@ class Line(Shape):
         super().__init__(view)
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'line'
 
     def on_draw(self, cr, buffer):
@@ -256,7 +256,7 @@ class Rectangle(Shape):
         super().__init__(view)
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'rectangle'
 
     def on_draw(self, cr, buffer):
@@ -278,7 +278,7 @@ class Oval(Shape):
         super().__init__(view)
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'oval'
 
     def on_draw(self, cr, buffer):
@@ -317,7 +317,7 @@ class SelectionBase(Tool):
         self.cursor = Gdk.CursorType.CROSS
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'selecttion-base'
 
     def _create_path(self, cr):
@@ -417,7 +417,7 @@ class SelectionBase(Tool):
                 return Gdk.CursorType.TOP_RIGHT_CORNER
             else:
                 return Gdk.CursorType.TOP_SIDE
-        if h -RESIZE_BORDER <= t:
+        if h - RESIZE_BORDER <= t:
             if s < RESIZE_BORDER:
                 return Gdk.CursorType.BOTTOM_LEFT_CORNER
             if w - RESIZE_BORDER <= s:
@@ -575,7 +575,7 @@ class Lasso(SelectionBase):
             cr.close_path()
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'lasso'
 
     def on_mouse_move(self, view, event, x, y):
@@ -619,7 +619,7 @@ class Selection(SelectionBase):
         cr.rectangle(self.src[0][0], self.src[0][1], w, h)
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'selection'
 
     def on_mouse_move(self, view, event, x, y):
@@ -696,23 +696,23 @@ class Text(SelectionBase):
         return self.preedit[0]
 
     def _layout_text(self, cr, buffer):
-        attrList = Pango.AttrList().new()
+        attr_list = Pango.AttrList().new()
         text = self.text
         current = self.current
         if self._has_preedit():
             text = text[:current] + self.preedit[0] + text[current:]
-            attrList.splice(self.preedit[1], len(text[:current].encode()), len(self.preedit[0].encode()))
+            attr_list.splice(self.preedit[1], len(text[:current].encode()), len(self.preedit[0].encode()))
             current += self.preedit[2]
         layout = PangoCairo.create_layout(cr)
         desc = Pango.font_description_from_string(self.font)
         layout.set_font_description(desc)
         layout.set_text(text, -1)
-        layout.set_attributes(attrList)
+        layout.set_attributes(attr_list)
         PangoCairo.update_layout(cr, layout)
         return layout, text, current
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'text'
 
     def copy_clipboard(self, clipboard: Gtk.Clipboard, buffer):
@@ -921,7 +921,7 @@ class Paste(SelectionBase):
         cr.rectangle(0, 0, self.source.get_width(), self.source.get_height())
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'paste'
 
     def on_draw(self, cr, buffer):
@@ -952,7 +952,7 @@ class FloodFill(Tool):
         self.clicked = False
 
     @classmethod
-    def get_name(self):
+    def get_name(cls):
         return 'floodfill'
 
     def on_draw(self, cr, buffer):
@@ -1216,7 +1216,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
                 dy = self._vadjustment.get_value()
         else:
             dy = (self.height - height) / 2
-        return (round(dx), round(dy))
+        return round(dx), round(dy)
 
     def _has_preedit(self):
         return self.preedit[0]
@@ -1243,7 +1243,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         return False
 
     def _update_cursor(self, x, y, pressed):
-        if (x < 0 or y  < 0) and not pressed:
+        if (x < 0 or y < 0) and not pressed:
             cursor = Gdk.CursorType.TOP_LEFT_ARROW
         else:
             cursor = self.tool.get_cursor(self, x, y, pressed)
