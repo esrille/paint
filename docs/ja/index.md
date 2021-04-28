@@ -4,7 +4,6 @@
 
 　エスリルでつくっている「ペイント」は、ビットマップ￹画像￺がぞう￻をかくための、GTK 3のアプリケーションソフトです。
 ￹Python￺パイソン￻でかいたシンプルなプログラムです。
-バージョン0.2.0のプログラムの￹行数￺ぎょうすう￻は￹約￺やく￻2,300￹行￺ぎょう￻です。
 
 ## 「ペイント」の￹開発￺かいはつ￻について
 
@@ -12,4 +11,4 @@
 ￹開発￺かいはつ￻￹予定￺よてい￻の￹機能￺きのう￻については、GitHubの[Issues](https://github.com/esrille/paint/issues)のページでみることができます。
 
 <hr>
-<br><small>Copyright 2020 Esrille Inc. </small>
+<br><small>Copyright 2020, 2021 Esrille Inc. </small>
