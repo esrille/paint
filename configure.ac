@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Esrille Inc.
+# Copyright (c) 2020, 2021 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-AC_INIT([esrille-paint], [0.2.0], [https://github.com/esrille/paint/issues])
+AC_INIT([esrille-paint], [0.2.1], [https://github.com/esrille/paint/issues])
+AC_CONFIG_AUX_DIR([.])
 AM_INIT_AUTOMAKE([foreign tar-ustar])
 
 AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
