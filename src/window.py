@@ -1,6 +1,6 @@
 # Paint
 #
-# Copyright (c) 2020, 2021 Esrille Inc.
+# Copyright (c) 2020-2022 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -227,7 +227,7 @@ class Window(Gtk.ApplicationWindow):
         self.connect("delete-event", self.on_delete_event)
 
         action = Gio.SimpleAction.new_stateful(
-            "antialias", None, GLib.Variant.new_boolean(False))
+            "antialias", None, GLib.Variant.new_boolean(self.paintview.get_antialias()))
         action.connect("activate", self.antialias_callback)
         self.add_action(action)
 

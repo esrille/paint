@@ -1,6 +1,6 @@
 # Paint
 #
-# Copyright (c) 2020, 2021 Esrille Inc.
+# Copyright (c) 2020-2022 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ MARQUEE_COLOR = (0.8, 0.6, 0.1, 1)
 
 class Tool:
     def __init__(self, view):
-        self.antialias = False
+        self.antialias = True
         self.color = (0, 0, 0, 1)
         self.line_width = 1
 
@@ -1183,7 +1183,7 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
         self._init_scrollable()
         self._init_immultiontext()
 
-        self.antialias = False
+        self.antialias = True
         self.color = (0, 0, 0, 1)
         self.line_width = 1
         self.tool_cls = Pencil
@@ -1344,6 +1344,9 @@ class PaintView(Gtk.DrawingArea, Gtk.Scrollable):
             self._change_tool(self.tool_cls)
         self.buffer.emit('undo')
         self.queue_draw()
+
+    def get_antialias(self):
+        return self.antialias
 
     def get_buffer(self):
         return self.buffer
