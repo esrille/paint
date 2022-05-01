@@ -148,6 +148,7 @@ class Pencil(Tool):
     def __init__(self, view):
         super().__init__(view)
         self.stroke = []
+        self.control_points = []
 
     @classmethod
     def get_name(cls):
@@ -168,43 +169,38 @@ class Pencil(Tool):
             if length == 1:
                 cr.close_path()     # Draw a point
         else:
-            control_points = self.calculate_control_points()
             cr.move_to(self.stroke[0][0], self.stroke[0][1])
             # quadratic curve
-            cr.curve_to(control_points[0][0], control_points[0][1],
-                        control_points[0][0], control_points[0][1],
+            cr.curve_to(self.control_points[0][0], self.control_points[0][1],
+                        self.control_points[0][0], self.control_points[0][1],
                         self.stroke[1][0], self.stroke[1][1])
 
             for i in range(2, length - 1):
                 # cubic curve
-                cr.curve_to(control_points[i * 2 - 3][0], control_points[i * 2 - 3][1],
-                            control_points[i * 2 - 2][0], control_points[i * 2 - 2][1],
+                cr.curve_to(self.control_points[i * 2 - 3][0], self.control_points[i * 2 - 3][1],
+                            self.control_points[i * 2 - 2][0], self.control_points[i * 2 - 2][1],
                             self.stroke[i][0], self.stroke[i][1])
 
             # quadratic curve
-            cr.curve_to(control_points[-1][0], control_points[-1][1],
-                        control_points[-1][0], control_points[-1][1],
+            cr.curve_to(self.control_points[-1][0], self.control_points[-1][1],
+                        self.control_points[-1][0], self.control_points[-1][1],
                         self.stroke[-1][0], self.stroke[-1][1])
         cr.stroke()
 
     def on_mouse_move(self, view, event, x, y):
-        if self.stroke[-1][0] != x and self.stroke[-1][1] != y:
-            self.stroke.append((x, y))
+        if self.stroke[-1][0] == x and self.stroke[-1][1] == y:
+            return
+        self.stroke.append((x, y))
+        if len(self.stroke) <= 2:
+            return
+        # Calculate control points
+        dx = (self.stroke[-1][0] - self.stroke[-3][0]) / 6
+        dy = (self.stroke[-1][1] - self.stroke[-3][1]) / 6
+        self.control_points.append((self.stroke[-2][0] - dx, self.stroke[-2][1] - dy))
+        self.control_points.append((self.stroke[-2][0] + dx, self.stroke[-2][1] + dy))
 
     def on_mouse_press(self, view, event, x, y):
-        self.stroke = []
         self.stroke.append((x, y))
-
-    def calculate_control_points(self):
-        length = len(self.stroke)
-        assert 3 <= length, 'cannot calculate control points'
-        control_points = []
-        for i in range(1, length - 1):
-            dx = (self.stroke[i + 1][0] - self.stroke[i - 1][0]) / 6
-            dy = (self.stroke[i + 1][1] - self.stroke[i - 1][1]) / 6
-            control_points.append((self.stroke[i][0] - dx, self.stroke[i][1] - dy))
-            control_points.append((self.stroke[i][0] + dx, self.stroke[i][1] + dy))
-        return control_points
 
 
 class Eraser(Pencil):
