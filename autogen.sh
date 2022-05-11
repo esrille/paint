@@ -3,7 +3,7 @@ set -e
 set -x
 
 aclocal
-autopoint
+autopoint -f
 automake --add-missing --copy
 autoconf
 ./configure "$@"
