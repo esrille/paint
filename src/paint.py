@@ -155,7 +155,7 @@ class Pencil(Tool):
         return 'pencil'
 
     def get_cursor(self, view, x, y, pressed):
-        return Gdk.CursorType.PENCIL
+        return Gdk.CursorType.BLANK_CURSOR if pressed else Gdk.CursorType.CROSS
 
     def on_draw(self, cr, buffer):
         length = len(self.stroke)
