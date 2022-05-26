@@ -25,6 +25,7 @@ from paint import PaintBuffer, PaintView
 import gettext
 import logging
 import os
+import subprocess
 
 
 _ = lambda a: gettext.dgettext(package.get_domain(), a)
@@ -261,10 +262,10 @@ class Window(Gtk.ApplicationWindow):
         dialog.set_transient_for(self)
         dialog.set_modal(True)
         dialog.set_program_name(self.title)
-        dialog.set_copyright("Copyright 2020, 2021 Esrille Inc.")
+        dialog.set_copyright("Copyright 2020-2022 Esrille Inc.")
         dialog.set_authors(["Esrille Inc."])
         dialog.set_documenters(["Esrille Inc."])
-        dialog.set_website("http://www.esrille.com/")
+        dialog.set_website("https://www.esrille.com/")
         dialog.set_website_label("Esrille Inc.")
         dialog.set_logo_icon_name(package.get_name())
         dialog.set_version(package.get_version())
@@ -366,7 +367,9 @@ class Window(Gtk.ApplicationWindow):
 
     def help_callback(self, *whatever):
         url = "file://" + os.path.join(package.get_datadir(), _("help/en/index.html"))
-        Gtk.show_uri_on_window(self, url, Gdk.CURRENT_TIME)
+        # Use yelp to open local HTML help files.
+        # cf. https://gitlab.gnome.org/GNOME/yelp/-/merge_requests/24
+        subprocess.Popen(['yelp', url])
 
     def initialize_file_chooser(self, dialog):
         if self.file:
