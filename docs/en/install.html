@@ -41,13 +41,33 @@ Paint</a>
 </div>
 <main>
 <h1>Installing Paint</h1>
-<p>You can download the software packages arranged for installing on Fedora, Ubuntu, and Raspberry Pi OS from the <a href="https://github.com/esrille/paint/releases">Releases</a> page.</p>
+<p>If you are using Fedora or Ubuntu, you can install <strong>Paint</strong> with just a few commands in your terminal.</p>
+<h2>Fedora</h2>
+<p>The <strong>Paint</strong> software package is provided through the <a href="https://copr.fedorainfracloud.org/coprs/g/esrille/releases/">@esrille/releases</a> Copr project.
+To enable this Copr project, execute the following command:</p>
+<pre><code>sudo dnf copr enable @esrille/releases
+</code></pre>
+<p>After enabling the Copr project, install the <strong>Paint</strong> package using the following command:</p>
+<pre><code>sudo dnf install esrille-paint
+</code></pre>
+<h2>Ubuntu</h2>
+<p>The <strong>Paint</strong> software package is provided from the <a href="https://launchpad.net/~esrille/+archive/ubuntu/releases">esrille/releases</a> PPA repository.
+To enable this PPA repository, execute the following commands:</p>
+<pre><code>sudo add-apt-repository ppa:esrille/releases
+sudo apt update
+</code></pre>
+<p>After updating the PPA repositories, install the <strong>Paint</strong> package using the following command:</p>
+<pre><code>sudo apt install esrille-paint
+</code></pre>
 <h2>Building Sources</h2>
-<p>To build and install "Paint" manually, run the following commands:</p>
+<p>To build and install <strong>Paint</strong> manually, run the following commands:</p>
 <pre><code>git clone https://github.com/esrille/paint.git
-./autogen.sh
+./autogen.sh --prefix=/usr
 make
 sudo make install
+</code></pre>
+<p>To uninstall <strong>Paint</strong>, run the following command:</p>
+<pre><code>sudo make uninstall
 </code></pre>
 </main>
 <nav>

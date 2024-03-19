@@ -47,83 +47,92 @@ thead tr th:first-child, tbody tr td:first-child {
 }
 </style>
 
-<h2>Starting "Paint"</h2>
-<p>The program filename is "esrille-paint".</p>
-<p>Select "Paint" from the graphics application list.
-A "Paint" window like below will open:</p>
+<h2>Starting <strong>Paint</strong></h2>
+<p>Select the <strong>Paint</strong> icon from the application list; the application filename is “esrille-paint”:</p>
+<p><img alt="Paint icon" src="../icon.png"></p>
+<p><br>
+A <strong>Paint</strong> window like below will open:</p>
 <p><img alt="The main screen layout" src="layout.png"></p>
-<p>When you move the mouse cursor to the drawing canvas, the mouse cursor becomes a pencil.
-You can draw a curved line as you drag in the canvas.
-You can choose a color with the [Color] button.
-You can choose a tool with the [Tool] button.
-We will describe each tool in the next sections.</p>
-<p>To run "Paint" from the command line, type as follow:</p>
+<p>When you move your mouse cursor over the drawing canvas, it becomes a cross-hair cursor.
+To draw a curved line, click and drag your mouse on the canvas.
+Use the [<strong>Colors</strong>] button to choose a color for your drawing.
+Click the [<strong>Tools</strong>] button to access different drawing tools.
+We will describe each tool in the upcoming sections.</p>
+<p><br>
+To run <strong>Paint</strong> from the command line, type as follow:</p>
 <pre><code>$ esrille-paint [filename]...
 </code></pre>
 <p>In the filename part, type the name of the file you want to open.
 When creating a new file, you do not have to specify the filename.</p>
 <h2>Colors</h2>
-<p>You can choose a color with the [Color] button.
-A "Pick a Color" dialog like below will open:</p>
+<p>To select a color, click the [Colors] button, and a “Pick a Color” dialog will open:</p>
 <p><img alt="Pick a Color" src="color.png"></p>
-<p>Click any color to make it the current color, and click [Select] to change the color.
-To create your own custom color, click [+] button in the [Pick a Color] dialog.</p>
+<p>To change the current color, click on the desired color in the pallet, and click [Select].
+If you want to create a custom color, click the [+] button within the dialog.</p>
 <h2>Tools</h2>
-<p>You can choose a tool with the [Tool] button.
-A "Tool" dialog like below will open:</p>
+<p>To select a tool, click the [Tools] button, and a “Tool” dialog will open:</p>
 <p><img alt="Tool" src="tool.png"></p>
-<p>Click any tool to make it the current tool.</p>
-<p>Frequently used tools can be selected using keyboard;
-you can choose a tool simply typing the key listed in the first column in the table below:</p>
+<p>To change the current tool, click on the desired tool within the dialog.</p>
+<p>Frequently used tools can be selected using keyboard shortcuts.
+Simply type the key corresponding to the tool listed in the table below:</p>
 <table>
 <thead>
 <tr>
 <th>Tool</th>
+<th>Shortcut</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><img alt="Lasso" src="../figures/lasso-symbolic.svg"> Lasso</td>
+<td></td>
 <td>Create a non-rectangular selection to move, stretch or shrink.<br>Drag in the canvas to select a non-rectangular area. Then position the mouse cursor inside the area surrounded by a dotted outline and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of your selection.<br>• Use the [Escape] key to complete the current selection.</td>
 </tr>
 <tr>
-<td><img alt="Select" src="../figures/selection-symbolic.svg"> Select<br><b>[S]</b></td>
-<td>Create a rectangular selection to move, stretch or shrink. Drag in the canvas to select a rectangular area. Then position the mouse cursor inside the area surrounded by a dotted outline and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of your selection.<br>• Use the [Escape] key to complete the current selection.<br>• Use <b>[Ctrl]+[A]</b> to select the entire drawing canvas.</td>
+<td><img alt="Select" src="../figures/selection-symbolic.svg"> Select</td>
+<td><b>S</b></td>
+<td>Create a rectangular selection to move, stretch or shrink. Drag in the canvas to select a rectangular area. Then position the mouse cursor inside the area surrounded by a dotted outline and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of your selection.<br>• Use the [Escape] key to complete the current selection.<br>• Use [Ctrl]+[A] to select the entire drawing canvas.</td>
 </tr>
 <tr>
-<td><img alt="Pencil" src="../figures/pencil-symbolic.svg"> Pencil<br><b>[P]</b></td>
+<td><img alt="Pencil" src="../figures/pencil-symbolic.svg"> Pencil</td>
+<td><b>P</b></td>
 <td>Draw a curved line where you drag.</td>
 </tr>
 <tr>
-<td><img alt="Eraser" src="../figures/eraser-symbolic.svg"> Eraser<br><b>[E]</b></td>
+<td><img alt="Eraser" src="../figures/eraser-symbolic.svg"> Eraser</td>
+<td><b>E</b></td>
 <td>Erase where you drag.</td>
 </tr>
 <tr>
 <td><img alt="Line" src="../figures/line-symbolic.svg"> Line</td>
+<td></td>
 <td>Draw a straight line as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to constrain drawing.</td>
 </tr>
 <tr>
 <td><img alt="Rectangle" src="../figures/rectangle-symbolic.svg"> Rectangle</td>
+<td></td>
 <td>Draw a rectangle as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to draw squares.</td>
 </tr>
 <tr>
 <td><img alt="Oval" src="../figures/oval-symbolic.svg"> Oval</td>
+<td></td>
 <td>Draw an oval as you drag. The drawing is completed when you finish dragging.<br>• Use the [Shift] key to draw circles.</td>
 </tr>
 <tr>
-<td><img alt="Text" src="../figures/text-symbolic.svg"> Text<br><b>[T]</b></td>
+<td><img alt="Text" src="../figures/text-symbolic.svg"> Text</td>
+<td><b>T</b></td>
 <td>Type text.<br>Click where you want to add text. Then type your text.<br>You can move, stretch or shrink the text; position the mouse cursor around the text and drag.<br>• Use the [Shift] key to constrain the movement and/or to maintain the proportion of the text.<br>• Use the [Escape] key to finish typing.</td>
 </tr>
 <tr>
 <td><img alt="Flood Fill" src="../figures/floodfill-symbolic.svg"> Flood Fill</td>
+<td></td>
 <td>Fill an outlined area.<br>Click in any outlined area you want to fill.</td>
 </tr>
 </tbody>
 </table>
 <h2>Style</h2>
-<p>You can choose a line width with the [Style] button.
-A "Style" dialog like below will open:</p>
+<p>To select a line width, click the [Styles] button, and a “Style” dialog will open:</p>
 <p><img alt="Style" src="style.png"></p>
 <p>Click any style to make it the current line width.</p>
 <table>
@@ -186,7 +195,7 @@ A "Style" dialog like below will open:</p>
 </table>
 <h2>Saving</h2>
 <p>Your changes to the image will be lost if you don't save them to a file.
-To save changes, click the [Save] button in the header bar of the "Paint" window.
+To save changes, click the [Save] button in the header bar of the <strong>Paint</strong> window.
 Enter a filename the first time you save a new image, then click the [Save] button in the dialog box.</p>
 <p>You can also use <b>[Ctrl]+[S]</b> to save the image.</p>
 <h2>Primary menu</h2>
@@ -243,7 +252,8 @@ The primary menu contains the following menu items.</p>
 </tbody>
 </table>
 <h3>Note</h3>
-<p>The file format supported in the Paint version 0.1.0 is only PNG. The other file formats will be supported in the future versions.</p>
+<p>Paint currently supports the PNG file format only.
+The other file formats will be supported in the future versions.</p>
 </main>
 <nav>
 <a href='install.html' id='nav-prev'><div>&lt;</div></a>
