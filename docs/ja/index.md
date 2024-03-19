@@ -11,4 +11,4 @@
 ￹開発￺かいはつ￻￹予定￺よてい￻の￹機能￺きのう￻については、GitHubの[Issues](https://github.com/esrille/paint/issues)のページでみることができます。
 
 <hr>
-<br><small>Copyright 2020-2022 Esrille Inc. </small>
+<br><small>Copyright 2020-2024 Esrille Inc. </small>
