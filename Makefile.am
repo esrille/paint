@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Esrille Inc.
+# Copyright (c) 2020-2024 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# po must be after the directories that contain .desktop files
 SUBDIRS = \
 	docs \
 	icons \
@@ -21,6 +22,7 @@ SUBDIRS = \
 
 EXTRA_DIST = \
 	debian/changelog \
+	debian/changelog.in \
 	debian/compat \
 	debian/control \
 	debian/copyright \
@@ -38,6 +40,26 @@ EXTRA_DIST = \
 DISTCLEANFILES = \
 	po/stamp-it \
 	$(NULL)
+
+debian/changelog:
+	$(AM_V_GEN) \
+	( \
+		date=`date -R`; \
+		version=@VERSION@; \
+		source_version=@SOURCE_VERSION@; \
+		s=`cat debian/changelog.in`; \
+		eval "echo \"$${s}\""; \
+	) > $@
+
+@PACKAGE_NAME@.spec:
+	$(AM_V_GEN) \
+	( \
+		date=`date '+%a %b %d %Y'`; \
+		version=@VERSION@; \
+		source_version=@SOURCE_VERSION@; \
+		s=`cat @PACKAGE_NAME@.spec.in`; \
+		eval "echo \"$${s}\""; \
+	) > $@
 
 uninstall-hook:
 	-rmdir $(pkgdatadir)

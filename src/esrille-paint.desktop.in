@@ -1,8 +1,6 @@
 [Desktop Entry]
 Name=Paint
-Name[ja]=ペイント
 Comment=Create images
-Comment[ja]=画像ファイルをつくる
 Exec=esrille-paint
 Icon=esrille-paint
 Terminal=false

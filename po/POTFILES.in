@@ -1,6 +1,7 @@
-src/application.py
-src/main.py
 src/resources/gtk/menu.ui
 src/resources/ui/new-dialog.glade
+src/application.py
+src/esrille-paint.desktop.in
+src/main.py
 src/paint.py
 src/window.py

@@ -1,4 +1,4 @@
-# Copyright (c) 2020-2022 Esrille Inc.
+# Copyright (c) 2020-2024 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-AC_INIT([esrille-paint], [0.2.2], [https://github.com/esrille/paint/issues])
+m4_define([paint_version], [0.2.3~rc1])
+AC_INIT([esrille-paint], [paint_version], [https://github.com/esrille/paint/issues])
 AC_CONFIG_AUX_DIR([.])
 AM_INIT_AUTOMAKE([foreign tar-ustar])
 
 AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
+
+# Check Python
+AM_PATH_PYTHON([3.8])
 
 # define GETTEXT_* variables
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
@@ -27,8 +31,11 @@ AC_DEFINE_UNQUOTED(
     [Define to the read-only architecture-independent data directory.]
 )
 
-# Check Python
-AM_PATH_PYTHON([3.7])
+# For GitHub
+m4_define(paint_source_version,
+  [m4_esyscmd(echo -n paint_version | tr '~' '-')])
+SOURCE_VERSION="paint_source_version"
+AC_SUBST(SOURCE_VERSION)
 
 PKG_PROG_PKG_CONFIG
 
@@ -49,7 +56,6 @@ src/esrille-paint.in
 src/package.py.in
 src/resources/Makefile
 Makefile
-esrille-paint.spec
 )
 
 AC_OUTPUT

@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: esrille-paint 0.2.2\n"
+"Project-Id-Version: esrille-paint 0.2.3~rc1\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2022-05-11 16:26+0900\n"
+"POT-Creation-Date: 2024-03-19 14:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "_Open…"
 msgstr ""
 
-#: src/resources/gtk/menu.ui:16 src/window.py:149
+#: src/resources/gtk/menu.ui:16 src/window.py:150
 msgid "_Save"
 msgstr ""
 
@@ -73,150 +73,154 @@ msgstr ""
 msgid "Height:"
 msgstr ""
 
-#: src/window.py:112
+#: src/esrille-paint.desktop.in:3 src/window.py:113
 msgid "Paint"
 msgstr ""
 
-#: src/window.py:121
-msgid "Undo"
+#: src/esrille-paint.desktop.in:4
+msgid "Create images"
 msgstr ""
 
 #: src/window.py:122
-msgid "Redo"
+msgid "Undo"
 msgstr ""
 
 #: src/window.py:123
-msgid "Cut"
+msgid "Redo"
 msgstr ""
 
 #: src/window.py:124
-msgid "Copy"
+msgid "Cut"
 msgstr ""
 
 #: src/window.py:125
+msgid "Copy"
+msgstr ""
+
+#: src/window.py:126
 msgid "Paste"
 msgstr ""
 
-#: src/window.py:151
+#: src/window.py:152
 msgid "Save the current file"
 msgstr ""
 
-#: src/window.py:157
+#: src/window.py:158
 msgid "Select the current color"
 msgstr ""
 
-#: src/window.py:165
+#: src/window.py:166
 msgid "Select the current tool"
 msgstr ""
 
-#: src/window.py:173
+#: src/window.py:174
 msgid "Select the current line width"
 msgstr ""
 
-#: src/window.py:281
+#: src/window.py:282
 msgid "PNG images"
 msgstr ""
 
-#: src/window.py:286
+#: src/window.py:287
 msgid "Any files"
 msgstr ""
 
-#: src/window.py:296
+#: src/window.py:297
 msgid "Background Color"
 msgstr ""
 
-#: src/window.py:325
+#: src/window.py:326
 msgid "Save changes to this image?"
 msgstr ""
 
-#: src/window.py:326
+#: src/window.py:327
 msgid "If you don't, changes will be lost."
 msgstr ""
 
-#: src/window.py:327
+#: src/window.py:328
 msgid "Close _Without Saving"
 msgstr ""
 
-#: src/window.py:352
+#: src/window.py:353
 msgid "Font"
 msgstr ""
 
-#: src/window.py:353
+#: src/window.py:354
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr ""
 
-#: src/window.py:368
+#: src/window.py:369
 msgid "help/en/index.html"
 msgstr ""
 
-#: src/window.py:452
+#: src/window.py:455
 msgid "Open File"
 msgstr ""
 
-#: src/window.py:496
+#: src/window.py:499
 msgid "Failed to save image."
 msgstr ""
 
-#: src/window.py:505
+#: src/window.py:508
 msgid "Save File"
 msgstr ""
 
-#: src/window.py:549
+#: src/window.py:552
 msgid "1 px"
 msgstr ""
 
-#: src/window.py:550
+#: src/window.py:553
 msgid "2 px"
 msgstr ""
 
-#: src/window.py:551
+#: src/window.py:554
 msgid "4 px"
 msgstr ""
 
-#: src/window.py:552
+#: src/window.py:555
 msgid "8 px"
 msgstr ""
 
-#: src/window.py:554
+#: src/window.py:557
 msgid "Style"
 msgstr ""
 
-#: src/window.py:568
+#: src/window.py:571
 msgid "Select a non-rectangular area"
 msgstr ""
 
-#: src/window.py:569
+#: src/window.py:572
 msgid "Select a rectangular area"
 msgstr ""
 
-#: src/window.py:570
+#: src/window.py:573
 msgid "Draw lines"
 msgstr ""
 
-#: src/window.py:571
+#: src/window.py:574
 msgid "Erase where you drag"
 msgstr ""
 
-#: src/window.py:572
+#: src/window.py:575
 msgid "Draw straight lines"
 msgstr ""
 
-#: src/window.py:573
+#: src/window.py:576
 msgid "Draw rectangles"
 msgstr ""
 
-#: src/window.py:574
+#: src/window.py:577
 msgid "Draw ovals"
 msgstr ""
 
-#: src/window.py:575
+#: src/window.py:578
 msgid "Type text"
 msgstr ""
 
-#: src/window.py:576
+#: src/window.py:579
 msgid "Fill an outlined area"
 msgstr ""
 
-#: src/window.py:578
+#: src/window.py:581
 msgid "Tool"
 msgstr ""
