@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-m4_define([paint_version], [0.2.3~rc1])
+m4_define([paint_version], [0.2.3~rc2])
 AC_INIT([esrille-paint], [paint_version], [https://github.com/esrille/paint/issues])
 AC_CONFIG_AUX_DIR([.])
 AM_INIT_AUTOMAKE([foreign tar-ustar])

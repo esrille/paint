@@ -26,6 +26,7 @@ EXTRA_DIST = \
 	debian/compat \
 	debian/control \
 	debian/copyright \
+	debian/esrille-paint.docs \
 	debian/rules \
 	debian/source/format \
 	autogen.sh \

@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Esrille Inc.
+# Copyright (c) 2020-2024 Esrille Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-dist_hicolor_icon_48_DATA = esrille-paint.png
-hicolor_icon_48dir = $(datadir)/icons/hicolor/48x48/apps
+dist_hicolor_icon_64_DATA = esrille-paint.png
+hicolor_icon_64dir = $(datadir)/icons/hicolor/64x64/apps
 
 dist_hicolor_icon_scalable_DATA = esrille-paint.svg
 hicolor_icon_scalabledir = $(datadir)/icons/hicolor/scalable/apps
