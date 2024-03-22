@@ -24,12 +24,12 @@ sudo dnf install esrille-paint
 
 ```
 sudo add-apt-repository ppa:esrille/releases
-sudo apt update
 ```
 
 　あとは、aptコマンドで「ペイント」をインストールできます。
 
 ```
+sudo apt update
 sudo apt install esrille-paint
 ```
 
@@ -39,6 +39,7 @@ sudo apt install esrille-paint
 
 ```
 git clone https://github.com/esrille/paint.git
+cd paint/
 ./autogen.sh --prefix=/usr
 make
 sudo make install

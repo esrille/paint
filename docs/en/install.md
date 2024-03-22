@@ -20,16 +20,16 @@ sudo dnf install esrille-paint
 ## Ubuntu
 
 The **Paint** software package is provided from the [esrille/releases](https://launchpad.net/~esrille/+archive/ubuntu/releases) PPA repository.
-To enable this PPA repository, execute the following commands:
+To enable this PPA repository, execute the following command:
 
 ```
 sudo add-apt-repository ppa:esrille/releases
+```
+
+After updating the PPA repositories, install the **Paint** package using the following commands:
+
+```
 sudo apt update
-```
-
-After updating the PPA repositories, install the **Paint** package using the following command:
-
-```
 sudo apt install esrille-paint
 ```
 
@@ -39,6 +39,7 @@ To build and install **Paint** manually, run the following commands:
 
 ```
 git clone https://github.com/esrille/paint.git
+cd paint/
 ./autogen.sh --prefix=/usr
 make
 sudo make install
