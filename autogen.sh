@@ -1,9 +1,3 @@
-#!/bin/sh
-set -e
-set -x
-
-aclocal
-autopoint -f
-automake --add-missing --copy
-autoconf
+#!/bin/sh -xe
+autoreconf -fi -v
 ./configure "$@"
