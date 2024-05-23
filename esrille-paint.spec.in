@@ -47,6 +47,9 @@ autoreconf -fi -v
 * ${date} Esrille Inc. <info@esrille.com> - ${version}-1
 - See https://github.com/esrille/paint/releases/tag/v${source_version}
 
+* Thu Mar 28 2024 Esrille Inc. <info@esrille.com> - 0.2.3-1
+- See https://github.com/esrille/paint/releases/tag/v0.2.3
+
 * Wed May 11 2022 Esrille Inc. <info@esrille.com> - 0.2.2-1
 - See https://github.com/esrille/paint/releases/tag/v0.2.2
 

@@ -1,16 +1,16 @@
-# ITALIAN TRANSLATION.
-# Copyright (C) YEAR Esrille Inc. <info@esrille.com>
+# Paint
+# Copyright (C) 2020-2024 Esrille Inc. <info@esrille.com>
 # This file is distributed under the same license as the esrille-paint package.
-# ALBANO BATTISTELLA <albanobattistella@gmail.com>, 2024.
-#
+# Esrille Inc. <info@esrille.com>, 2020-2024.
+# Albano Battistella <albanobattistella@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.2.3\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2024-03-28 18:45+0900\n"
+"POT-Creation-Date: 2024-05-23 18:47+0900\n"
 "PO-Revision-Date: 2024-05-21 15:35+0100\n"
 "Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
-"Language-Team: Italian <LL@li.org>\n"
+"Language-Team: Italian <info@esrille.com>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

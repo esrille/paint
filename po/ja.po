@@ -1,12 +1,12 @@
 # Paint
 # Copyright (C) 2020-2024 Esrille Inc. <info@esrille.com>
-# This file is distributed under the same license as the esrille-typing-practice package.
+# This file is distributed under the same license as the esrille-paint package.
 # Esrille Inc. <info@esrille.com>, 2020-2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: esrille-paint 0.2.3\n"
 "Report-Msgid-Bugs-To: https://github.com/esrille/paint/issues\n"
-"POT-Creation-Date: 2024-03-28 18:45+0900\n"
+"POT-Creation-Date: 2024-05-23 18:47+0900\n"
 "PO-Revision-Date: 2020-09-26 13:40+0900\n"
 "Last-Translator: Esrille Inc. <info@esrille.com>\n"
 "Language-Team: Japanese <info@esrille.com>\n"
